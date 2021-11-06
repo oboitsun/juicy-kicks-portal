@@ -1,0 +1,60 @@
+@import "../../variables.scss";
+
+.home-dashboard {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 40px;
+  .dashboard-banner {
+    width: 100%;
+    display: flex;
+    column-gap: 32px;
+    padding: 24px 32px;
+    background: linear-gradient(180deg, #c79d5f 0%, #957647 100%);
+    border: 5px solid #4a2d05;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  }
+  .dashboard-button {
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 5px solid #a58115;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1;
+    font-size: 24px;
+    height: 128px;
+    justify-content: center;
+  }
+  .my-dinos {
+    background: linear-gradient(180deg, #e7b628 0%, #a9892c 100%);
+    border-color: #a58115;
+  }
+  .my-eggs {
+    background: linear-gradient(180deg, #ff9400 0%, #cc7703 100%);
+    border-color: #9b6418;
+  }
+  .minigames {
+    background: linear-gradient(180deg, #3a3a3a 0%, #242424 100%);
+    border-color: #000;
+  }
+  .leader {
+    background: linear-gradient(180deg, #739a3a 0%, #5b7c29 100%);
+    border-color: #486819;
+  }
+  .store {
+    background: linear-gradient(180deg, #bfad75 0%, #988857 100%);
+    border-color: #8a7c4e;
+  }
+  .market {
+    background: linear-gradient(180deg, #8c7d4e 0%, #6f6033 100%);
+    border-color: #645422;
+  }
+}
