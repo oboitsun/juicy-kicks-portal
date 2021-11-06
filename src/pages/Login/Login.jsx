@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./login-page.scss";
 import LoginHeader from "../../components/LoginHeader";
 import LoginFooter from "../../components/LoginFooter";
+import loginBG from "/assets/bg-login.png";
 export default function Login(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,9 +26,9 @@ export default function Login(props) {
       <div className="absolute top-10 w-full left-0 z-[2]">
         <LoginHeader />
       </div>
-      <img className="background" src="../../assets/bg-login.png" alt="bg" />
+      <img className="background" src={loginBG} alt="bg" />
       <div className="login-window ">
-        <img className="logo w-full" src="../../assets/logo.png" alt="logo" />
+        <img className="logo w-full" src="../assets/logo.png" alt="logo" />
         <p className="heading text-border">Lorem Ipsum is simply dummy text</p>
         <div className="grid gap-6 w-full">
           {wallets.map((wallet, i) => (
