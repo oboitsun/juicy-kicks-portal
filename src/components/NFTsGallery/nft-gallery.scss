@@ -3,15 +3,15 @@
   .bio-wrapper {
     filter: grayscale(1);
   }
-  .thumbs {
-    border-color: black;
-    .slide-bg {
+  .nft-wrap {
+    .nft-img {
       filter: grayscale(1);
+      border-color: black;
     }
   }
-  .active .thumbs {
+  .active {
     border-color: white;
-    .slide-bg {
+    .nft-img {
       filter: grayscale(0);
     }
   }

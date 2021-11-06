@@ -3,13 +3,13 @@ import React from "react";
 export default function MainSlide({ slide, bg }) {
   return (
     <div className="slide-wrapper h-full relative ">
-      {bg && (
+      {/* {bg && (
         <img
           className="slide-bg main-slider-bg"
           src="../../assets/slider1-bg.png"
           alt="bg"
         />
-      )}
+      )} */}
       <div className="absolute top-10 flex flex-col items-center">
         <p className="text-border text-2xl text-white">{slide.name}</p>
         <div className="relative -top-1">
@@ -19,7 +19,7 @@ export default function MainSlide({ slide, bg }) {
           </span>
         </div>
       </div>
-      <img className="slide-pic" src={slide.pic} alt={slide.name} />
+      <img className="w-full" src={slide.pic} alt={slide.name} />
     </div>
   );
 }

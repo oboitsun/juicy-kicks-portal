@@ -7,7 +7,6 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  padding-bottom: 10px;
 }
 .thumbs {
   border-radius: 14px;
@@ -26,7 +25,7 @@
   transform: translateX(-50%) translateY(-50%);
   z-index: 0;
 }
-.main-slider-bg {
+.nft-img {
   overflow: hidden;
   border: 5px solid #ffffff;
   box-sizing: border-box;

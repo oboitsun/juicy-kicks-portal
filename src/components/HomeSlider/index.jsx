@@ -23,22 +23,22 @@ export default function HomeSlider() {
     {
       name: "Green dino",
       age: "10 days",
-      pic: "../../assets/dinos/1.png",
+      pic: "assets/dino-slide.png",
     },
     {
       name: "purple dino",
       age: "15 days",
-      pic: "../../assets/dinos/3.png",
+      pic: "assets/dino-slide.png",
     },
     {
       name: "orange dino",
       age: "20 days",
-      pic: "../../assets/dinos/4.png",
+      pic: "assets/dino-slide.png",
     },
     {
       name: "pink dino",
       age: "5 days",
-      pic: "../../assets/dinos/5.png",
+      pic: "assets/dino-slide.png",
     },
   ];
   return (
@@ -61,11 +61,6 @@ export default function HomeSlider() {
           prevEl: "#home-slider-prev",
         }}
       >
-        <img
-          className="slide-bg main-slider-bg"
-          src="../../assets/slider1-bg.png"
-          alt="bg"
-        />
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
             <MainSlide slide={slide} />

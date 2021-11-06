@@ -28,9 +28,7 @@ export default function NFTsGallery({ slides }) {
           ))}
         </div>
         <div className="picture pb-[100%] relative">
-          <div className="absolute w-full h-full">
-            <MainSlide slide={slides[currentSlide]} bg />
-          </div>
+          <MainSlide slide={slides[currentSlide]} bg />
         </div>
       </div>
     </div>
