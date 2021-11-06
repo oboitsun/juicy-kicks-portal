@@ -1,0 +1,21 @@
+.nft-gallery-page {
+  @apply w-full h-full flex-grow flex flex-col justify-between;
+  .bio-wrapper {
+    filter: grayscale(1);
+  }
+  .thumbs {
+    border-color: black;
+    .slide-bg {
+      filter: grayscale(1);
+    }
+  }
+  .active .thumbs {
+    border-color: white;
+    .slide-bg {
+      filter: grayscale(0);
+    }
+  }
+  .active .bio-wrapper {
+    filter: grayscale(0);
+  }
+}

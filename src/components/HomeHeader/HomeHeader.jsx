@@ -2,6 +2,7 @@ import React from "react";
 import "./home-header.scss";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../reducers/uiReducer";
+import { Link } from "react-router-dom";
 export default function HomeHeader() {
   const dispatch = useDispatch();
   const logOut = () => {
@@ -9,7 +10,9 @@ export default function HomeHeader() {
   };
   return (
     <div className="home-header">
-      <img className="w-1/5 block" src="../../assets/logo.png" alt="Dino logo" />
+      <Link className="block w-1/5" to="/">
+        <img className="w-full block" src="../../assets/logo.png" alt="Dino logo" />
+      </Link>
       <div className="flex items-center gap-5">
         <img className="w-auto" src="../../assets/dfinity-logo.png" alt="Dfinity logo" />
         <div className="header-balance">2.70195258 ICP</div>

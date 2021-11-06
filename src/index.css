@@ -26,3 +26,21 @@ body {
     rgb(58, 58, 58) 3.87783px -3.15633px 0px, rgb(58, 58, 58) 4.4276px -2.32301px 0px,
     rgb(58, 58, 58) 4.80085px -1.39708px 0px, rgb(58, 58, 58) 4.98271px -0.415447px 0px;
 }
+
+body *::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+body *::-webkit-scrollbar {
+  padding-right: 2px;
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+body *::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  width: 5px;
+
+  background-color: #8a7c4e80;
+}

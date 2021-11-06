@@ -9,12 +9,14 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 // import Swiper core and required modules
-import SwiperCore, { FreeMode, Navigation, Thumbs } from "swiper";
+import SwiperCore, { FreeMode, Navigation, Thumbs, Autoplay } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([FreeMode, Navigation, Thumbs]);
+SwiperCore.use([FreeMode, Navigation, Thumbs, Autoplay]);
 
 import "./home-slider.scss";
+import ThumbSlide from "../ThumbsSlide";
+import MainSlide from "../MainSlide";
 export default function HomeSlider() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const slides = [
@@ -48,6 +50,7 @@ export default function HomeSlider() {
         <img id="home-slider-next" src="../../assets/arrow-next.svg" alt="prev" />
       </div>
       <Swiper
+        autoplay={{ delay: 2500 }}
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
@@ -65,18 +68,7 @@ export default function HomeSlider() {
         />
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
-            <div className="slide-wrapper">
-              <div className="absolute top-10 flex flex-col items-center">
-                <p className="text-border text-2xl text-white">{slide.name}</p>
-                <div className="relative -top-1">
-                  <img src="../../assets/age-pic.png" alt="age" />
-                  <span className="top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-xs w-full">
-                    {slide.age}
-                  </span>
-                </div>
-              </div>
-              <img className="slide-pic" src={slide.pic} alt={slide.name} />
-            </div>
+            <MainSlide slide={slide} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -95,21 +87,7 @@ export default function HomeSlider() {
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
-            <div className="flex flex-col justify-between h-full">
-              <div className="slide-wrapper thumbs h-full">
-                <img className="slide-bg" src="../../assets/slider1-bg.png" alt="bg" />
-                <img className="slide-pic" src={slide.pic} alt={slide.name} />
-              </div>
-              <div className=" flex flex-col items-center pt-1">
-                <p className="text-border text-xs text-white">{slide.name}</p>
-                <div className="relative -top-1">
-                  <img src="../../assets/age-pic.png" alt="age" />
-                  <span className="top-1/2 absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-[10px] w-full">
-                    {slide.age}
-                  </span>
-                </div>
-              </div>
-            </div>
+            <ThumbSlide slide={slide} />
           </SwiperSlide>
         ))}
       </Swiper>
