@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="">
       <Routes location={location} key={location.pathname}>
-        <Route path="/login" element={<Login />} />
+        <Route path="/login*" element={<Login />} />
         <Route
           path="/"
           element={
