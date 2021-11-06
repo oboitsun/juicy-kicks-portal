@@ -6,7 +6,7 @@ import "./login-page.scss";
 import LoginHeader from "../../components/LoginHeader";
 import LoginFooter from "../../components/LoginFooter";
 import loginBG from "/assets/bg-login.png";
-import { motion } from "framer-motion";
+
 export default function Login(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -23,18 +23,12 @@ export default function Login(props) {
     { name: "earth", onClick: handleLogin },
   ];
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ opacity: 0 }}
-      id="login-page"
-      className="w-full min-h-screen overflow-hidden relative"
-    >
+    <div id="login-page" className="w-full min-h-screen overflow-hidden relative">
       <div className="absolute top-10 w-full left-0 z-[2]">
         <LoginHeader />
       </div>
       <img className="background" src={loginBG} alt="bg" />
-      <motion.div className="login-window ">
+      <div className="login-window ">
         <img className="logo w-full" src="../assets/logo.png" alt="logo" />
         <p className="heading text-border">Lorem Ipsum is simply dummy text</p>
         <div className="grid gap-6 w-full">
@@ -44,10 +38,10 @@ export default function Login(props) {
             </button>
           ))}
         </div>
-      </motion.div>
+      </div>
       <div className="absolute bottom-10 w-full left-0 z-[2]">
         <LoginFooter />
       </div>
-    </motion.div>
+    </div>
   );
 }
