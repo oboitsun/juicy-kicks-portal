@@ -50,7 +50,7 @@ export default function HomeSlider() {
         <img id="home-slider-next" src="../../assets/arrow-next.svg" alt="prev" />
       </div>
       <Swiper
-        autoplay={{ delay: 2500 }}
+        // autoplay={{ delay: 2500 }}
         onSwiper={setThumbsSwiper}
         loop={true}
         spaceBetween={10}
