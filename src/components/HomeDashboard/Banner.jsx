@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Banner() {
   return (
-    <div className="dashboard-banner col-span-2 grid grid-cols-2 gap-6">
+    <div className="dashboard-banner col-span-2 grid grid-cols-2 gap-6 max-h-[226px]">
       <img
         className="w-full h-auto block"
         src="assets/eggs-banner.png"

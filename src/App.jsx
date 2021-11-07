@@ -12,6 +12,7 @@ import Minigames from "./pages/Minigames";
 import MyDinos from "./pages/MyDinos";
 import MyEggs from "./pages/MyEggs";
 import Store from "./pages/Store";
+import HelpCenter from "./pages/HelpCenter/HelpCenter";
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="">
       <Routes location={location} key={location.pathname}>
-        <Route path="/login*" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route
           path="/"
           element={
@@ -37,6 +38,7 @@ function App() {
             <Route path="/store" element={<Store />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/minigames" element={<Minigames />} />
+            <Route path="/help" element={<HelpCenter />} />
           </AnimatePresence>
         </Route>
       </Routes>{" "}

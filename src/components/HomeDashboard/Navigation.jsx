@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Banner from "./Banner";
 
-export default function Dasboard() {
+export default function Navigation() {
   const buttons = [
     {
       name: "my dino",

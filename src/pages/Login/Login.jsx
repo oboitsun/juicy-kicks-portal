@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../reducers/uiReducer";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -6,6 +6,7 @@ import "./login-page.scss";
 import LoginHeader from "../../components/LoginHeader";
 import LoginFooter from "../../components/LoginFooter";
 import loginBG from "/assets/bg-login.png";
+import Modal from "../../components/Modal";
 
 export default function Login(props) {
   let navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function Login(props) {
     { name: "plug", onClick: handleLogin },
     { name: "earth", onClick: handleLogin },
   ];
+  const [showModal, setShowModal] = useState(false);
   return (
     <div id="login-page" className="w-full min-h-screen overflow-hidden relative">
       <div className="absolute top-10 w-full left-0 z-[2]">
@@ -40,8 +42,14 @@ export default function Login(props) {
         </div>
       </div>
       <div className="absolute bottom-10 w-full left-0 z-[2]">
-        <LoginFooter />
+        <LoginFooter
+          onClick={() => {
+            setShowModal(true);
+          }}
+          login
+        />
       </div>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 }

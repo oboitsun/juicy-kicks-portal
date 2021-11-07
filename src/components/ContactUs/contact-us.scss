@@ -1,0 +1,39 @@
+@import "../../variables.scss";
+#contact-us {
+  padding: 40px 0;
+
+  .contact-grid {
+    display: grid;
+    gap: 24px;
+  }
+  .form-input {
+    background-color: transparent;
+    padding: 20px;
+    width: 100%;
+    color: white;
+    border-radius: 20px;
+    border: 3px solid white;
+  }
+  .form-input::placeholder {
+    color: white;
+  }
+  .submit {
+    margin-top: 24px;
+    align-self: flex-end;
+    width: 50%;
+    justify-self: flex-end;
+    padding: 16px 40px;
+    color: #fff;
+    border-radius: 140px;
+    background-color: $black;
+  }
+  .submit-modal {
+    width: 100%;
+  }
+  .line {
+    display: none;
+  }
+  .poof {
+    width: 100%;
+  }
+}
