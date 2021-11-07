@@ -2,53 +2,8 @@ import React, { useState } from "react";
 import Dropdown from "../../components/Dropdown";
 import MarketplaceCard from "../../components/MarketplaceCard";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
-const cards = [
-  {
-    id: 1,
-    type: "egg",
-    name: " yellow egg",
-    rarity: "common",
-    text: "common",
-    imgSrc: "assets/nfts/nft-egg-1.png",
-    price: 10,
-  },
-  {
-    id: 2,
-    type: "dino",
-    name: "orange dino",
-    rarity: "uncommon",
-    text: "uncommon",
-    imgSrc: "assets/nfts/nft-dino-1.png",
-    price: 10,
-  },
-  {
-    id: 3,
-    type: "egg",
-    name: "egg",
-    rarity: "rare",
-    text: "rare",
-    imgSrc: "assets/nfts/nft-egg-1.png",
-    price: 12,
-  },
-  {
-    id: 4,
-    type: "dino",
-    name: "dino",
-    rarity: "rare",
-    text: "rare",
-    imgSrc: "assets/nfts/nft-dino-1.png",
-    price: 22,
-  },
-  {
-    id: 5,
-    type: "egg",
-    name: " oraange egg",
-    rarity: "ultraRare",
-    text: "ultra rare",
-    imgSrc: "assets/nfts/nft-egg-1.png",
-    price: 5,
-  },
-];
+import { cards } from "./db";
+import Pagination from "./Pagination";
 const sortBy = [
   {
     value: "rarity",
@@ -73,9 +28,13 @@ const rarities = [
 export default function Marketplace() {
   const [type, setType] = useState("all");
   const [rarity, setRarity] = useState("all");
+
   const sortedFiltered = cards
     .filter((card) => card.type === type || (type === "all" && card))
     .filter((card) => card.rarity === rarity || (rarity === "all" && card));
+  const [page, setPage] = useState(1);
+  const perPage = 10;
+  const paginated = sortedFiltered.slice(page * perPage - perPage, page * perPage);
   return (
     <div className="w-full ">
       <div className="w-full flex justify-between items-center pb-6 relative">
@@ -102,10 +61,10 @@ export default function Marketplace() {
         <div className="absolute bottom-0 left-0 w-full h-1 rounded-full bg-darkTurf"></div>
       </div>
 
-      {sortedFiltered.length > 0 ? (
+      {paginated.length > 0 ? (
         <div className="grid grid-cols-4 gap-x-5 gap-y-10 pt-10">
-          {sortedFiltered.map((card) => (
-            <MarketplaceCard key={card.id} card={card} />
+          {paginated.map((card, i) => (
+            <MarketplaceCard key={i} card={card} />
           ))}
         </div>
       ) : (
@@ -124,6 +83,14 @@ export default function Marketplace() {
           </button>
         </div>
       )}
+      <div className="flex">
+        <Pagination
+          perPage={perPage}
+          total={cards.length}
+          currentPage={page}
+          setCurrentPage={setPage}
+        />
+      </div>
     </div>
   );
 }
