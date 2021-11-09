@@ -31,7 +31,6 @@ function App() {
         >
           <AnimatePresence exitBeforeEnter>
             <Route path="/" element={<HomeDashboard />} />
-
             <Route path="/my-dinos" element={<MyDinos />} />
             <Route path="/my-eggs" element={<MyEggs />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
