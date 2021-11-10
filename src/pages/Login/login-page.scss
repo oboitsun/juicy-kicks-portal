@@ -1,45 +1,22 @@
 @import "../../variables.scss";
 #login-page {
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .background {
-    @apply w-full object-cover absolute top-0 left-0;
+  padding-top: max(150px, 10%);
+  position: relative;
+  top: 25%;
+  .btn {
+    border: 2px solid black;
+    border-radius: 8px;
+    @apply py-4  uppercase font-extrabold uppercase bg-black text-white w-full mt-6;
   }
-  .login-window {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 524px;
-    border: 2px solid white;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 54px;
-    background: rgba(255, 255, 255, 0.1);
-  }
-  .heading {
-    padding: 32px 0;
-    line-height: 1;
-
-    font-size: 24px;
-  }
-  .wallet {
-    width: 100%;
-    border-radius: 40px;
-    border: 2px solid white;
-    padding: 24px;
-    line-height: 1;
-    font-size: 24px;
-  }
-  .plug {
-    background: $yellow;
-    border-color: $yellow;
+  .stoic {
+    border-color: #90d5ae;
+    background: #90d5ae;
   }
   .earth {
-    background: $black;
-    border-color: $black;
+    box-sizing: border-box;
+    color: black;
+    background: transparent;
+    border: 2px solid black;
   }
 }

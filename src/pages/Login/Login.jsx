@@ -5,7 +5,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import "./login-page.scss";
 import LoginHeader from "../../components/LoginHeader";
 import LoginFooter from "../../components/LoginFooter";
-import loginBG from "/assets/bg-login.png";
 import Modal from "../../components/Modal";
 
 export default function Login(props) {
@@ -19,9 +18,9 @@ export default function Login(props) {
     navigate(from, { replace: true });
   };
   const wallets = [
-    { name: "stoic", onClick: handleLogin },
-    { name: "plug", onClick: handleLogin },
-    { name: "earth", onClick: handleLogin },
+    { name: "stoic", onClick: handleLogin, imgSrc: "assets/stoic-wallet.png" },
+    { name: "plug", onClick: handleLogin, imgSrc: "assets/plug-wallet.png" },
+    { name: "earth", onClick: handleLogin, imgSrc: "assets/earth-wallet.png" },
   ];
   const [showModal, setShowModal] = useState(false);
   return (
@@ -29,18 +28,31 @@ export default function Login(props) {
       <div className="absolute top-10 w-full left-0 z-[2]">
         <LoginHeader />
       </div>
-      <img className="background" src={loginBG} alt="bg" />
-      <div className="login-window ">
-        <img className="logo w-full" src="../assets/logo.png" alt="logo" />
-        <p className="heading text-border">Lorem Ipsum is simply dummy text</p>
-        <div className="grid gap-6 w-full">
+      <div className="my-container wallets-container">
+        <div className="grid grid-cols-3 gap-10 w-full relative z-10">
           {wallets.map((wallet, i) => (
-            <button key={i} className={`wallet ${wallet.name}`} onClick={wallet.onClick}>
-              connect {wallet.name} wallet
-            </button>
+            <div
+              key={i}
+              className="w-full bg-white flex flex-col items-center p-8 rounded-lg"
+            >
+              <img className="h-10" src={wallet.imgSrc} alt="wallet-icon" />
+              <button onClick={wallet.onClick} className={`btn ${wallet.name}`}>
+                connect wallet
+              </button>
+            </div>
           ))}
         </div>
       </div>
+      <img
+        className="w-2/3 bottom-1/2 left-1/2 absolute -translate-x-1/2 translate-y-2/3 z-[1]"
+        src="assets/gang.png"
+        alt="gang"
+      />
+      <img
+        className="w-3/4 bottom-1/2 left-1/2 absolute -translate-x-1/2 translate-y-1/2 z-[0]"
+        src="assets/burst.png"
+        alt="gang"
+      />
       <div className="absolute bottom-10 w-full left-0 z-[2]">
         <LoginFooter
           onClick={() => {

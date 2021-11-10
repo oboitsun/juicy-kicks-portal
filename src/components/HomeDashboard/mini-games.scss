@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+.mini-games {
+  .game-over-banner {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    position: relative;
+    background: $orange-gradient;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 46px 20px 20px;
+  }
+}

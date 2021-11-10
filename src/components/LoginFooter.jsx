@@ -1,27 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Socials from "./Socials";
 export default function LoginFooter({ login = false, ...props }) {
+  const currentYear = new Date();
   return (
     <div className="flex items-center justify-center mx-auto gap-10 uppercase text-white text-xl">
+      <Socials />
       <img
         className="w-auto block"
         src="../../assets/dfinity-logo.png"
         alt="dfinity logo"
       />
 
-      {!login ? (
-        <Link to="/help">
-          <button className="px-6 py-4 leading-none bg-myBlack rounded-full">
-            need help ?
-          </button>
-        </Link>
-      ) : (
-        <button {...props} className="px-6 py-4 leading-none bg-myBlack rounded-full">
-          need help ?
-        </button>
-      )}
-      <p className="">Dino world</p>
+      <p className="">Juicy kicks {currentYear.getFullYear()}</p>
     </div>
   );
 }

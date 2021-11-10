@@ -18,7 +18,12 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="">
+    <div className="relative">
+      <img
+        className="absolute bottom-0 w-full h-auto"
+        src="assets/platform.png"
+        alt="platform"
+      />
       <Routes location={location} key={location.pathname}>
         <Route path="/login" element={<Login />} />
         <Route

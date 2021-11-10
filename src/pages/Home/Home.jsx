@@ -10,7 +10,7 @@ export default function Home() {
       id="home"
       className="flex flex-col items-center justify-between w-full overflow-hidden"
     >
-      <div className="my-container h-full flex-grow flex flex-col ">
+      <div className="my-container h-full flex-grow flex flex-col relative z-10">
         <HomeHeader />
 
         <motion.div

@@ -8,19 +8,29 @@ export default function HomeHeader() {
   const logOut = () => {
     dispatch(setUser(null));
   };
+  const links = [
+    { text: "about us", href: "/" },
+    { text: "contact us", href: "/" },
+  ];
   return (
     <div className="home-header">
-      <Link className="block w-1/5" to="/">
-        <img className="w-full block" src="../../assets/logo.png" alt="Dino logo" />
-      </Link>
-      <div className="flex items-center gap-5">
-        <img className="w-auto" src="../../assets/dfinity-logo.png" alt="Dfinity logo" />
-        <div className="header-balance">2.70195258 ICP</div>
-        <button onClick={logOut} className="disconnect-button btn-filled">
-          <div className="w-1/2 wallet-id">xaj2u-2jdsadasd0dsad0sada0das</div>
-          <div className="w-1/2">Disconnect</div>
+      <div className="flex gap-10">
+        {links.map((link) => (
+          <a key={link.text} className="text-white uppercase text-xl " href={link.href}>
+            {link.text}
+          </a>
+        ))}
+      </div>
+      <img
+        className="w-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute"
+        src="assets/logo.png"
+        alt="Logo"
+      />
+      <div className="text-white flex gap-6 items-center font-extrabold  uppercase">
+        <p className="text-xl ">2.70195258 ICP</p>
+        <button onClick={logOut} className="btn-disconnect font-extrabold uppercase">
+          Disconnect
         </button>
-        <button className="settings">my settings</button>
       </div>
     </div>
   );

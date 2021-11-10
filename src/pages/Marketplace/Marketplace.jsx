@@ -37,10 +37,9 @@ export default function Marketplace() {
   const paginated = sortedFiltered.slice(page * perPage - perPage, page * perPage);
   return (
     <div className="w-full ">
+      <SectionHeaderBackNav pageName="Marketplace" />
+
       <div className="w-full flex justify-between items-center pb-6 relative">
-        <div className="w-1/2">
-          <SectionHeaderBackNav pageName="Marketplace" />
-        </div>
         <div className="flex w-full h-full items-center  flex-grow">
           <Dropdown options={sortBy} disabled heading={"Sort by"} />
           <div className="h-10 w-1 bg-darkTurf mr-3 flex-shrink-0"></div>
