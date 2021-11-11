@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./my-juicy.scss";
 export default function MyJuicy() {
   const cards = [
@@ -23,7 +24,10 @@ export default function MyJuicy() {
             <img key={i} className={`card-${i + 1}`} src={card.imgSrc} alt={card.alt} />
           ))}
         </div>
-        <button className="nav-grid-item-button my-juicy">my juicy</button>
+
+        <Link to="my-kicks">
+          <button className="nav-grid-item-button my-juicy">my juicy</button>
+        </Link>
       </div>
     </div>
   );

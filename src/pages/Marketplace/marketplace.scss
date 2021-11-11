@@ -1,0 +1,58 @@
+@import "../../variables.scss";
+#marketplace {
+  .nft-specs {
+    background: $lime;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    color: white;
+    text-transform: uppercase;
+  }
+  .swiper-store-nav-button {
+    cursor: pointer;
+    position: absolute;
+    z-index: 4;
+    top: calc(50% - 40px);
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  .next {
+    right: 0;
+    transform: translateX(110%) translateY(-50%);
+  }
+  .prev {
+    left: 0;
+    transform: translateX(-110%) translateY(-50%) rotate(180deg);
+  }
+  .swiper {
+    padding-bottom: 80px;
+  }
+  .swiper-pagination {
+    width: min-content;
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 800;
+    .swiper-pagination-bullet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+      width: 40px;
+      height: 40px;
+      border-radius: 4px;
+      border: 1px solid white;
+      color: white;
+      background: transparent;
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background: #fff;
+      color: #fd8618;
+    }
+  }
+}

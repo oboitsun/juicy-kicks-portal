@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./leaderboard.scss";
 export default function Leaderboard() {
   const leaderboard = [
@@ -36,7 +37,10 @@ export default function Leaderboard() {
             ))}
           </div>
         </div>
-        <button className="nav-grid-item-button leaderboard">all leaderboard</button>
+        <Link to="leaderboard">
+          {" "}
+          <button className="nav-grid-item-button leaderboard">all leaderboard</button>
+        </Link>
       </div>
     </div>
   );

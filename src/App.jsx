@@ -9,8 +9,8 @@ import Leaderboard from "./pages/Leaderboard";
 import Login from "./pages/Login/Login";
 import Marketplace from "./pages/Marketplace/Marketplace";
 import Minigames from "./pages/Minigames";
-import MyDinos from "./pages/MyDinos";
-import MyEggs from "./pages/MyEggs";
+import MyKicks from "./pages/MyKicks";
+
 import Store from "./pages/Store";
 import HelpCenter from "./pages/HelpCenter/HelpCenter";
 
@@ -36,8 +36,8 @@ function App() {
         >
           <AnimatePresence exitBeforeEnter>
             <Route path="/" element={<HomeDashboard />} />
-            <Route path="/my-dinos" element={<MyDinos />} />
-            <Route path="/my-eggs" element={<MyEggs />} />
+            <Route path="/my-kicks" element={<MyKicks />} />
+
             <Route path="/leaderboard" element={<Leaderboard />} />
             <Route path="/store" element={<Store />} />
             <Route path="/marketplace" element={<Marketplace />} />

@@ -9,6 +9,7 @@ module.exports = {
         myBlack: "#3a3a3a",
         turf: "#AD9D68",
         darkTurf: "#8a7c4e",
+        lime: "#bde407",
       },
     },
   },

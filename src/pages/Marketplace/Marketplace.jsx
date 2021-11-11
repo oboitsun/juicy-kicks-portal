@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import Dropdown from "../../components/Dropdown";
-import MarketplaceCard from "../../components/MarketplaceCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "./marketplace.scss";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/grid";
+import "swiper/css/pagination";
+
+// import Swiper core and required modules
+import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
-import { cards } from "./db";
-import Pagination from "./Pagination";
+import { slides } from "./db";
+
 const sortBy = [
   {
     value: "rarity",
     label: "rarity",
   },
 ];
-const types = [
-  {
-    value: "all",
-    label: "All",
-  },
-  { value: "egg", label: "Eggs" },
-  { value: "dino", label: "Dinos" },
-];
+
 const rarities = [
   { value: "all", label: "All" },
   { value: "common", label: "Common" },
@@ -25,31 +26,36 @@ const rarities = [
   { value: "rare", label: "Rare" },
   { value: "ultraRare", label: "Ultra Rare" },
 ];
+
+SwiperCore.use([Grid, Pagination, Navigation]);
 export default function Marketplace() {
   const [type, setType] = useState("all");
   const [rarity, setRarity] = useState("all");
-
-  const sortedFiltered = cards
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<div class="' + className + '">' + (index + 1) + "</div>";
+    },
+  };
+  const sortedFiltered = slides
     .filter((card) => card.type === type || (type === "all" && card))
     .filter((card) => card.rarity === rarity || (rarity === "all" && card));
-  const [page, setPage] = useState(1);
-  const perPage = 10;
-  const paginated = sortedFiltered.slice(page * perPage - perPage, page * perPage);
+
   return (
-    <div className="w-full ">
+    <div id="marketplace" className="w-full ">
       <SectionHeaderBackNav pageName="Marketplace" />
 
-      <div className="w-full flex justify-between items-center pb-6 relative">
-        <div className="flex w-full h-full items-center  flex-grow">
+      <div className="w-full flex justify-between items-center  relative">
+        <div className="flex w-full h-full items-center  flex-grow gap-8 py-10">
           <Dropdown options={sortBy} disabled heading={"Sort by"} />
-          <div className="h-10 w-1 bg-darkTurf mr-3 flex-shrink-0"></div>
-          <Dropdown
+
+          {/* <Dropdown
             setStateFunc={setType}
             value={types[types.findIndex((el) => el.value === type)]}
             options={types}
             heading={"Show"}
-          />
-          <div className="h-10 w-1 bg-darkTurf mr-3 flex-shrink-0"></div>
+          /> */}
+
           <Dropdown
             setStateFunc={setRarity}
             value={rarities[rarities.findIndex((el) => el.value === rarity)]}
@@ -57,38 +63,46 @@ export default function Marketplace() {
             heading={"Rarity"}
           />
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-1 rounded-full bg-darkTurf"></div>
       </div>
-
-      {paginated.length > 0 ? (
-        <div className="grid grid-cols-4 gap-x-5 gap-y-10 pt-10">
-          {paginated.map((card, i) => (
-            <MarketplaceCard key={i} card={card} />
+      <div className="relative">
+        <div id="swiper-store-page-next" className="swiper-store-nav-button next">
+          <img src="assets/slider-arrow-big.svg" alt="next slide" />
+        </div>
+        <div id="swiper-store-page-prev" className="swiper-store-nav-button prev">
+          <img src="assets/slider-arrow-big.svg" alt="next slide" />
+        </div>
+        <Swiper
+          className=""
+          slidesPerView={4}
+          grid={{
+            rows: 2,
+            fill: "row",
+          }}
+          spaceBetween={32}
+          pagination={pagination}
+          // loop={true}
+          navigation={{
+            nextEl: "#swiper-store-page-next",
+            prevEl: "#swiper-store-page-prev",
+          }}
+        >
+          {slides.map((slide, i) => (
+            <SwiperSlide key={i} className="">
+              <div className="slide-inner-wrapper rounded-md overflow-hidden">
+                <img className="w-full" src={slide.imgSrc} alt="slide" />
+                <div className="nft-specs">
+                  <p className="text-white font-extrabold text-xs uppercase">
+                    {slide.character}
+                  </p>
+                  <button className=" px-4 rounded-md border-white border-2 text-xs uppercase">
+                    buy now
+                  </button>
+                </div>
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
-      ) : (
-        <div className="py-10 flex flex-col items-center">
-          <p className="text-white text-4xl text-center py-10">
-            Sorry no NFTs matching your filter options :(
-          </p>
-          <button
-            onClick={() => {
-              setType("all");
-              setRarity("all");
-            }}
-            className="text-yellow text-2xl"
-          >
-            Clear filters
-          </button>
-        </div>
-      )}
-      <div className="flex">
-        <Pagination
-          perPage={perPage}
-          total={cards.length}
-          currentPage={page}
-          setCurrentPage={setPage}
-        />
+          <div class="swiper-pagination flex"></div>
+        </Swiper>{" "}
       </div>
     </div>
   );

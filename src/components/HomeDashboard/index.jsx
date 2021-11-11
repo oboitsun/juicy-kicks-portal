@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ContactUs from "./ContactUs";
 import "./home-dashboard.scss";
 import Leaderboard from "./Leaderboard";
@@ -10,6 +11,7 @@ export default function HomeDashboard() {
     <div className="home-dashboard">
       <div className="nav-grid">
         <MyJuicy />
+
         <MiniGames />
         <Leaderboard />
         <Store />

@@ -18,13 +18,16 @@ body {
   font-size: 14px;
   line-height: 1;
 }
-.store-button {
-  background: linear-gradient(180deg, #bfad75 0%, #988857 100%);
-  border: 5px solid #8a7c4e;
-  box-sizing: border-box;
-  border-radius: 20px;
-  padding: 10px 0;
+.nav-button {
+  font-weight: 800;
+  font-size: 12px;
+  @apply flex items-center text-white px-4 py-3 leading-none border-2 border-white rounded-lg;
+  &__buy {
+    background: $lime;
+    border-color: $lime;
+  }
 }
+
 .abs-centering {
   @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
 }

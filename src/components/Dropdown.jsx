@@ -3,6 +3,7 @@ import Select from "react-select";
 const colourStyles = {
   singleValue: (styles, { isDisabled }) => ({
     ...styles,
+    fontWeight: 800,
     color: isDisabled ? "lightGrey" : "white",
   }),
   menu: (styles) => ({
@@ -36,7 +37,7 @@ export default function Dropdown({
   value,
 }) {
   return (
-    <div className="w-full relative flex items-center">
+    <div className="w-full relative flex items-center z-20">
       <p className={`${disabled ? "text-gray-300" : "text-white/50"} min-w-max pr-1`}>
         {heading}:
       </p>
