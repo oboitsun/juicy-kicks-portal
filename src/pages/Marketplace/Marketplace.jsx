@@ -12,25 +12,65 @@ import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 import { slides } from "./db";
 
-const sortBy = [
+const characters = [
   {
-    value: "rarity",
-    label: "rarity",
+    value: null,
+    label: "All",
+  },
+  {
+    value: "pear",
+    label: "Pear",
+  },
+  {
+    value: "cherry",
+    label: "Cherry",
+  },
+  {
+    value: "watermelon",
+    label: "Watermelon",
+  },
+  {
+    value: "fig",
+    label: "Fig",
+  },
+  {
+    value: "pineapple",
+    label: "Pineapple",
+  },
+  {
+    value: "blueberry",
+    label: "Blueberry",
   },
 ];
-
+const backs = [
+  { value: null, label: "All" },
+  { value: "red", label: "Red" },
+  { value: "navy", label: "Navy" },
+  { value: "blue", label: "Blue" },
+  { value: "fig", label: "Fig" },
+  { value: "yellow", label: "Yellow" },
+  { value: "orange", label: "Orange" },
+];
 const rarities = [
-  { value: "all", label: "All" },
+  { value: null, label: "All" },
   { value: "common", label: "Common" },
   { value: "uncommon", label: "Uncommon" },
   { value: "rare", label: "Rare" },
   { value: "ultraRare", label: "Ultra Rare" },
 ];
-
+const sortBy = [
+  { value: null, label: "new first" },
+  {
+    value: "rarity",
+    label: "rarity",
+  },
+];
 SwiperCore.use([Grid, Pagination, Navigation]);
 export default function Marketplace() {
-  const [type, setType] = useState("all");
-  const [rarity, setRarity] = useState("all");
+  const [char, setChar] = useState(null);
+  const [back, setBack] = useState(null);
+  const [sort, setSort] = useState(null);
+  const [rarity, setRarity] = useState(null);
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
@@ -38,32 +78,46 @@ export default function Marketplace() {
     },
   };
   const sortedFiltered = slides
-    .filter((card) => card.type === type || (type === "all" && card))
-    .filter((card) => card.rarity === rarity || (rarity === "all" && card));
+    .filter((card) => card.character === char || (char === null && card))
+    .filter((card) => card.background === back || (back === null && card))
+    .filter((card) => card.rarity === rarity || (rarity === null && card));
 
   return (
     <div id="marketplace" className="w-full ">
       <SectionHeaderBackNav pageName="Marketplace" />
 
-      <div className="w-full flex justify-between items-center  relative">
-        <div className="flex w-full h-full items-center  flex-grow gap-8 py-10">
-          <Dropdown options={sortBy} disabled heading={"Sort by"} />
+      <div className="w-full flex justify-between items-center gap-8 py-8  relative">
+        <Dropdown
+          setStateFunc={setChar}
+          options={characters}
+          value={characters[characters.findIndex((el) => el.value === char)]}
+          icon="character"
+          heading={"Character"}
+        />
+        <Dropdown
+          setStateFunc={setBack}
+          options={backs}
+          value={backs[backs.findIndex((el) => el.value === back)]}
+          icon="background"
+          heading={"Background"}
+        />
+        <Dropdown
+          setStateFunc={setRarity}
+          options={rarities}
+          value={rarities[rarities.findIndex((el) => el.value === rarity)]}
+          icon="rarity"
+          heading={"Rarity"}
+        />
 
-          {/* <Dropdown
-            setStateFunc={setType}
-            value={types[types.findIndex((el) => el.value === type)]}
-            options={types}
-            heading={"Show"}
-          /> */}
-
-          <Dropdown
-            setStateFunc={setRarity}
-            value={rarities[rarities.findIndex((el) => el.value === rarity)]}
-            options={rarities}
-            heading={"Rarity"}
-          />
-        </div>
+        <Dropdown
+          setStateFunc={setSort}
+          options={sortBy}
+          value={sortBy[sortBy.findIndex((el) => el.value === sort)]}
+          icon="sort"
+          heading={"Sort by"}
+        />
       </div>
+
       <div className="relative">
         <div id="swiper-store-page-next" className="swiper-store-nav-button next">
           <img src="assets/slider-arrow-big.svg" alt="next slide" />
@@ -86,7 +140,7 @@ export default function Marketplace() {
             prevEl: "#swiper-store-page-prev",
           }}
         >
-          {slides.map((slide, i) => (
+          {sortedFiltered.map((slide, i) => (
             <SwiperSlide key={i} className="">
               <div className="slide-inner-wrapper rounded-md overflow-hidden">
                 <img className="w-full" src={slide.imgSrc} alt="slide" />
