@@ -1,7 +1,7 @@
 import React from "react";
 import "./home-header.scss";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../reducers/uiReducer";
+import { setUser, setShowModal } from "../../reducers/uiReducer";
 import { Link } from "react-router-dom";
 export default function HomeHeader() {
   const dispatch = useDispatch();
@@ -10,15 +10,20 @@ export default function HomeHeader() {
   };
   const links = [
     { text: "about us", href: "/" },
-    { text: "contact us", href: "/" },
+    {
+      text: "contact us",
+      onClick: () => {
+        dispatch(setShowModal(true));
+      },
+    },
   ];
   return (
     <div className="home-header">
       <div className="flex gap-10">
         {links.map((link) => (
-          <a key={link.text} className="text-white uppercase text-xl " href={link.href}>
+          <button key={link.text} className="text-white uppercase text-xl " {...link}>
             {link.text}
-          </a>
+          </button>
         ))}
       </div>
       <img

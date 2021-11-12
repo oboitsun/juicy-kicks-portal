@@ -1,4 +1,5 @@
 @import "../../variables.scss";
+
 .mini-games {
   .game-over-banner {
     width: 100%;
@@ -11,5 +12,38 @@
     justify-content: space-between;
     align-items: center;
     padding: 46px 20px 20px;
+
+    img {
+      transition: all 0.5s;
+    }
+  }
+  &:hover {
+    .game-over-banner > img {
+      transform: scale(1.1);
+    }
+    .joy1 {
+      transition: all 0.5s;
+      animation: rotate-clocwise 3s linear infinite;
+    }
+    .joy2 {
+      transition: all 0.5s;
+      animation: rotate-cc 3s linear infinite;
+    }
+  }
+}
+@keyframes rotate-clocwise {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+@keyframes rotate-cc {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-180deg);
   }
 }

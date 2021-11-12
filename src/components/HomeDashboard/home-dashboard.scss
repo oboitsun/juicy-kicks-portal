@@ -26,31 +26,59 @@
     text-transform: uppercase;
     font-weight: 800;
     flex-shrink: 0;
+    border: 2px solid transparent;
+    transition: all 0.5s;
+    &:hover {
+      transform: scale(0.95);
+    }
   }
+
   .my-juicy {
     background-color: #ff8413;
+    &:hover {
+      background-color: $lime;
+    }
   }
   .minigames {
     background-color: #000;
     box-shadow: unset;
+    &:hover {
+      background-color: transparent;
+      border-color: black;
+      color: black;
+    }
   }
   .leaderboard {
     box-shadow: 0px 24px 45px -23px rgba(0, 0, 0, 0.1) inset;
     background-color: transparent;
     border: 2px solid black;
     color: black;
+    &:hover {
+      background-color: $lime;
+      border-color: transparent;
+      color: white;
+    }
   }
   .store {
     box-shadow: 0px 24px 45px -23px rgba(0, 0, 0, 0.1) inset;
     background: #b9b9b9;
+    &:hover {
+      background-color: $orange;
+    }
   }
   .contact-us {
     box-shadow: 0px 24px 45px -23px rgba(0, 0, 0, 0.1) inset;
     background: #34a3ff;
+    &:hover {
+      background-color: $orange;
+    }
   }
   .marketplace {
     box-shadow: 0px 24px 45px -23px rgba(0, 0, 0, 0.1) inset;
     background: #755782;
+    &:hover {
+      background-color: $lime;
+    }
   }
   .swiper {
     height: 100%;

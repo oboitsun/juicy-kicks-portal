@@ -19,9 +19,14 @@ export default function MyJuicy() {
   return (
     <div className="nav-grid-item">
       <div className="flex flex-col gap-5">
-        <div className="relative flex justify-end">
+        <div className="relative flex justify-end my-juicy-container">
           {cards.map((card, i) => (
-            <img key={i} className={`card-${i + 1}`} src={card.imgSrc} alt={card.alt} />
+            <img
+              key={i}
+              className={`card card-${i + 1}`}
+              src={card.imgSrc}
+              alt={card.alt}
+            />
           ))}
         </div>
 

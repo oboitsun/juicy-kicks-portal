@@ -1,4 +1,3 @@
-import NFTsGallery from "../../components/NFTsGallery";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -9,6 +8,7 @@ import "./my-kicks.scss";
 // import Swiper core and required modules
 import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
+import Card from "./Card";
 const slides = [
   { imgSrc: "/assets/cards/fig.png" },
   { imgSrc: "/assets/cards/pineapple.png" },
@@ -62,7 +62,7 @@ export default function MyKicks({}) {
             rows: 3,
             fill: "row",
           }}
-          spaceBetween={30}
+          spaceBetween={0}
           pagination={pagination}
           // loop={true}
           navigation={{
@@ -72,9 +72,7 @@ export default function MyKicks({}) {
         >
           {slides.map((slide, i) => (
             <SwiperSlide key={i} className="">
-              <div className="slide-inner-wrapper">
-                <img className="w-full" src={slide.imgSrc} alt="slide" />
-              </div>
+              <Card slide={slide} />
             </SwiperSlide>
           ))}
           <div class="swiper-pagination flex"></div>

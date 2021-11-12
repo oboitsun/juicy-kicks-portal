@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import HomeHeader from "../../components/HomeHeader/HomeHeader";
 import LoginFooter from "../../components/LoginFooter";
 import { motion } from "framer-motion";
+import Modal from "../../components/Modal";
 export default function Home() {
   return (
     <div
@@ -23,6 +24,7 @@ export default function Home() {
         </motion.div>
       </div>
       <LoginFooter />
+      <Modal />
     </div>
   );
 }

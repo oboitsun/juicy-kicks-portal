@@ -13,17 +13,19 @@ import MyKicks from "./pages/MyKicks";
 
 import Store from "./pages/Store";
 import HelpCenter from "./pages/HelpCenter/HelpCenter";
+import FlyingCard from "./components/FlyingCard";
 
 function App() {
   const location = useLocation();
 
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <img
         className="absolute bottom-0 w-full h-auto"
         src="assets/platform.png"
         alt="platform"
       />
+      <FlyingCard />
       <Routes location={location} key={location.pathname}>
         <Route path="/login" element={<Login />} />
         <Route

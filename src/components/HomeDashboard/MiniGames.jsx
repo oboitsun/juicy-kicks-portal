@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./mini-games.scss";
 export default function MiniGames() {
   return (
@@ -7,11 +8,14 @@ export default function MiniGames() {
         <div className="game-over-banner">
           <img className="w-3/4" src="assets/game-over.svg" alt="game over" />
           <div className="flex w-full justify-between">
-            <img className="" src="assets/joystick.svg" alt="joystick" />
-            <img className="" src="assets/joystick2.svg" alt="joystick" />
+            <img className="joy1" src="assets/joystick.svg" alt="joystick" />
+            <img className="joy2" src="assets/joystick2.svg" alt="joystick" />
           </div>
         </div>
-        <button className="nav-grid-item-button minigames">my juicy</button>
+        <Link to="/minigames">
+          {" "}
+          <button className="nav-grid-item-button minigames">MINIGAMES</button>
+        </Link>
       </div>
     </div>
   );

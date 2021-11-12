@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Marketplace() {
   return (
@@ -11,7 +12,9 @@ export default function Marketplace() {
             alt="marketplace"
           />
         </div>
-        <button className="nav-grid-item-button marketplace">marketplace</button>
+        <Link to="/marketplace">
+          <button className="nav-grid-item-button marketplace">marketplace</button>
+        </Link>
       </div>
     </div>
   );

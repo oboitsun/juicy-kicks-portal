@@ -1,13 +1,14 @@
 import React from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Navigation, Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Link } from "react-router-dom";
 const slides = [
   { imgSrc: "/assets/cards/fig.png" },
   { imgSrc: "/assets/cards/pineapple.png" },
@@ -26,7 +27,12 @@ export default function Store() {
           </div>
           <Swiper
             className=""
-            modules={[Navigation]}
+            autoplay={{
+              delay: 3500,
+
+              disableOnInteraction: false,
+            }}
+            modules={[Navigation, Autoplay]}
             spaceBetween={10}
             slidesPerView={2}
             loop={true}
@@ -37,7 +43,7 @@ export default function Store() {
           >
             {slides.map((slide, i) => (
               <SwiperSlide key={i} className="">
-                <div className="slide-inner-wrapper">
+                <div className="slide-inner-wrapper flip-container">
                   <img className="slide-inner-img" src={slide.imgSrc} alt="slide" />
                   <button className="slide-buy-btn">buy now</button>
                 </div>
@@ -45,7 +51,9 @@ export default function Store() {
             ))}
           </Swiper>
         </div>
-        <button className="nav-grid-item-button store">Store</button>
+        <Link to="/store">
+          <button className="nav-grid-item-button store">Store</button>
+        </Link>
       </div>
     </div>
   );

@@ -15,11 +15,7 @@ export default function ContactUs() {
               placeholder="Email /Phone"
             />
 
-            <textarea
-              placeholder="Comment"
-              className="form-input comment"
-              rows={4}
-            ></textarea>
+            <textarea placeholder="Comment" className="form-input comment"></textarea>
           </div>
           <input className="submit" type="submit" value="REQUEST A CALL BACK" />
         </form>

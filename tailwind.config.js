@@ -5,10 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        yellow: "#e8b72c",
         myBlack: "#3a3a3a",
-        turf: "#AD9D68",
-        darkTurf: "#8a7c4e",
+        orange: "#FF8413",
         lime: "#bde407",
       },
     },

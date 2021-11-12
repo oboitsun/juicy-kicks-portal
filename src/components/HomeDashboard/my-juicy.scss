@@ -1,14 +1,35 @@
-.card-1 {
-  z-index: 3;
-  @apply relative w-3/4 h-auto top-0 right-0;
-}
-.card-2 {
-  z-index: 2;
-  @apply absolute w-3/4 top-0;
-  left: 12.5%;
-}
-.card-3 {
-  z-index: 1;
-  @apply absolute w-3/4 top-0;
-  left: 0%;
+.my-juicy-container {
+  .card {
+    transition: all 0.5s;
+  }
+  .card-1 {
+    z-index: 3;
+    @apply relative w-3/4 h-auto top-0 right-0;
+  }
+  .card-2 {
+    z-index: 2;
+    @apply absolute w-3/4 top-0;
+    left: 12.5%;
+  }
+  .card-3 {
+    z-index: 1;
+    @apply absolute w-3/4 top-0;
+    left: 0%;
+  }
+  &:hover {
+    .card-1 {
+      transform: scale(0.5) translateX(25%) translateY(-55%);
+    }
+
+    .card-2 {
+      left: 50%;
+      top: 50%;
+      transform: scale(0.5) translateY(-155%) translateX(-150%);
+    }
+    .card-3 {
+      left: 50%;
+      top: 50%;
+      transform: scale(0.5) translateY(-50%) translateX(-95%);
+    }
+  }
 }

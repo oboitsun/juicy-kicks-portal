@@ -1,17 +1,26 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { setShowModal } from "../reducers/uiReducer";
 import Socials from "./Socials";
-const links = [
-  { text: "about us", href: "/" },
-  { text: "contact us", href: "/" },
-];
+
 export default function LoginHeader() {
+  const dispatch = useDispatch();
+  const links = [
+    { text: "about us", href: "/" },
+    {
+      text: "contact us",
+      onClick: () => {
+        dispatch(setShowModal(true));
+      },
+    },
+  ];
   return (
     <div className="max-w-[1080px] mx-auto flex items-center justify-between relative">
       <div className="flex gap-10">
         {links.map((link) => (
-          <a key={link.text} className="text-white uppercase text-xl" href={link.href}>
+          <button key={link.text} className="text-white uppercase text-xl" {...link}>
             {link.text}
-          </a>
+          </button>
         ))}
       </div>
       <img
