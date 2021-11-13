@@ -15,11 +15,15 @@ export default function MyJuicy() {
       imgSrc: "assets/cards/pineapple.png",
       alt: "pineapple",
     },
+    {
+      imgSrc: "assets/cards/cherry.png",
+      alt: "cherry",
+    },
   ];
   return (
     <div className="nav-grid-item">
-      <div className="flex flex-col gap-5">
-        <div className="relative flex justify-end my-juicy-container">
+      <div className="flex flex-col justify-between h-full w-full gap-5">
+        <div className="relative flex  my-juicy-container w-full h-full flex-grow">
           {cards.map((card, i) => (
             <img
               key={i}

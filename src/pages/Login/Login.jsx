@@ -44,7 +44,7 @@ export default function Login(props) {
         </div>
       </div>
       <img
-        className="w-2/3 bottom-1/2 left-1/2 absolute -translate-x-1/2 translate-y-2/3 z-[1]"
+        className="w-1/2 bottom-1/2 left-1/2 absolute -translate-x-1/2 translate-y-2/3 z-[1]"
         src="assets/gang.png"
         alt="gang"
       />
