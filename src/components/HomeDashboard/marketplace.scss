@@ -1,0 +1,16 @@
+.market-grid {
+  @apply w-full h-auto grid grid-cols-3 gap-2;
+  transition: all 1.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

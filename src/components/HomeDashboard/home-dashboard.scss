@@ -16,6 +16,31 @@
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    transition: all 0.5s;
+    &:hover {
+      .market-grid {
+        transform: translateY(-30%);
+      }
+    }
+    &.contact {
+      p {
+        transition: all 0.5s;
+        opacity: 0;
+      }
+      img {
+        transition: all 0.5s;
+      }
+      &:hover {
+        p {
+          display: inline-block;
+          opacity: 1;
+          transform: translateX(-50%) translateY(-50%) scale(3);
+        }
+        img {
+          opacity: 0;
+        }
+      }
+    }
   }
   .nav-grid-item-button {
     height: 60px;
