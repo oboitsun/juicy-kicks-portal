@@ -20,11 +20,9 @@ function App() {
 
   return (
     <div className="relative overflow-hidden">
-      <img
-        className="absolute bottom-0 w-full h-auto"
-        src="assets/platform.png"
-        alt="platform"
-      />
+      <div className="absolute top-1/2 w-full h-auto ">
+        <img className=" w-full h-auto" src="assets/platform.png" alt="platform" />
+      </div>
       <FlyingCard />
       <Routes location={location} key={location.pathname}>
         <Route path="/login" element={<Login />} />

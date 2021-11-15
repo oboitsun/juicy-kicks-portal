@@ -9,7 +9,7 @@ export default function HomeHeader() {
     dispatch(setUser(null));
   };
   const links = [
-    { text: "about us", href: "/" },
+    { text: "home", href: "https://juicy-kicks.vercel.app" },
     {
       text: "contact us",
       onClick: () => {
@@ -20,10 +20,10 @@ export default function HomeHeader() {
   return (
     <div className="home-header">
       <div className="flex gap-10">
-        {links.map((link) => (
-          <button key={link.text} className="text-white uppercase text-xl " {...link}>
+        {links.map((link, i) => (
+          <a key={link.text} className="text-white uppercase text-xl " {...link}>
             {link.text}
-          </button>
+          </a>
         ))}
       </div>
       <img

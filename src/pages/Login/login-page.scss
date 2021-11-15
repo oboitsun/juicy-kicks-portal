@@ -19,4 +19,9 @@
     background: transparent;
     border: 2px solid black;
   }
+  .gang {
+    width: 45%;
+    top: 55%;
+    @apply left-1/2 absolute -translate-x-1/2 -translate-y-1/2 z-[1];
+  }
 }

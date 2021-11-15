@@ -6,7 +6,7 @@ import Socials from "./Socials";
 export default function LoginHeader() {
   const dispatch = useDispatch();
   const links = [
-    { text: "about us", href: "https://juicy-kicks.vercel.app" },
+    { text: "Home", href: "https://juicy-kicks.vercel.app" },
     {
       text: "contact us",
       onClick: () => {
@@ -18,8 +18,8 @@ export default function LoginHeader() {
     <div className="max-w-[1080px] mx-auto flex items-center justify-between relative">
       <div className="flex gap-10">
         {links.map((link) =>
-          link.text === "about us" ? (
-            <a className="text-white uppercase text-xl" href={link.href}>
+          link.text === "Home" ? (
+            <a key={link.text} className="text-white uppercase text-xl" href={link.href}>
               {link.text}
             </a>
           ) : (
