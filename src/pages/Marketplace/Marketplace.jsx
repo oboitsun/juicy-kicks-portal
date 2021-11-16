@@ -10,61 +10,9 @@ import "swiper/css/pagination";
 // import Swiper core and required modules
 import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
-import { slides } from "./db";
 
-const characters = [
-  {
-    value: null,
-    label: "All",
-  },
-  {
-    value: "pear",
-    label: "Pear",
-  },
-  {
-    value: "cherry",
-    label: "Cherry",
-  },
-  {
-    value: "watermelon",
-    label: "Watermelon",
-  },
-  {
-    value: "fig",
-    label: "Fig",
-  },
-  {
-    value: "pineapple",
-    label: "Pineapple",
-  },
-  {
-    value: "blueberry",
-    label: "Blueberry",
-  },
-];
-const backs = [
-  { value: null, label: "All" },
-  { value: "red", label: "Red" },
-  { value: "navy", label: "Navy" },
-  { value: "blue", label: "Blue" },
-  { value: "fig", label: "Fig" },
-  { value: "yellow", label: "Yellow" },
-  { value: "orange", label: "Orange" },
-];
-const rarities = [
-  { value: null, label: "All" },
-  { value: "common", label: "Common" },
-  { value: "uncommon", label: "Uncommon" },
-  { value: "rare", label: "Rare" },
-  { value: "ultraRare", label: "Ultra Rare" },
-];
-const sortBy = [
-  { value: null, label: "new first" },
-  {
-    value: "rarity",
-    label: "rarity",
-  },
-];
+import { slides, characters, backs, rarities, sortBy } from "../../utils";
+
 SwiperCore.use([Grid, Pagination, Navigation]);
 export default function Marketplace() {
   const [char, setChar] = useState(null);
@@ -148,9 +96,10 @@ export default function Marketplace() {
                   <p className="text-white font-extrabold text-xs uppercase">
                     {slide.character}
                   </p>
-                  <button className=" px-4 rounded-md border-white border-2 text-xs uppercase">
+                  <p className="text-white "> 1 ICP</p>
+                  {/* <button className=" px-4 rounded-md border-white border-2 text-xs uppercase">
                     buy now
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </SwiperSlide>

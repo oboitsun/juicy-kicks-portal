@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import Dropdown from "../../components/Dropdown";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/grid";
@@ -9,44 +9,62 @@ import "./my-kicks.scss";
 import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 import Card from "./Card";
-const slides = [
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-  { imgSrc: "/assets/cards/fig.png" },
-  { imgSrc: "/assets/cards/pineapple.png" },
-  { imgSrc: "/assets/cards/pear.png" },
-];
+import { slides, characters, backs, rarities, sortBy } from "../../utils";
+import { useState } from "react";
+
 SwiperCore.use([Grid, Pagination, Navigation]);
+
 export default function MyKicks({}) {
+  const [char, setChar] = useState(null);
+  const [back, setBack] = useState(null);
+  const [sort, setSort] = useState(null);
+  const [rarity, setRarity] = useState(null);
   const pagination = {
     clickable: true,
     renderBullet: function (index, className) {
       return '<div class="' + className + '">' + (index + 1) + "</div>";
     },
   };
+  const sortedFiltered = slides
+    .filter((card) => card.character === char || (char === null && card))
+    .filter((card) => card.background === back || (back === null && card))
+    .filter((card) => card.rarity === rarity || (rarity === null && card));
+
   return (
     <div id="my-kicks-page" className="w-full h-full  relative ">
       <div className="pb-10">
         <SectionHeaderBackNav pageName={"My juicy kicks"} />
+      </div>
+      <div className="w-full flex justify-between items-center gap-8 py-8  relative">
+        <Dropdown
+          setStateFunc={setChar}
+          options={characters}
+          value={characters[characters.findIndex((el) => el.value === char)]}
+          icon="character"
+          heading={"Character"}
+        />
+        <Dropdown
+          setStateFunc={setBack}
+          options={backs}
+          value={backs[backs.findIndex((el) => el.value === back)]}
+          icon="background"
+          heading={"Background"}
+        />
+        <Dropdown
+          setStateFunc={setRarity}
+          options={rarities}
+          value={rarities[rarities.findIndex((el) => el.value === rarity)]}
+          icon="rarity"
+          heading={"Rarity"}
+        />
+
+        <Dropdown
+          setStateFunc={setSort}
+          options={sortBy}
+          value={sortBy[sortBy.findIndex((el) => el.value === sort)]}
+          icon="sort"
+          heading={"Sort by"}
+        />
       </div>
       <div className="relative">
         <div id="swiper-store-page-next" className="swiper-store-nav-button next">
@@ -70,7 +88,7 @@ export default function MyKicks({}) {
             prevEl: "#swiper-store-page-prev",
           }}
         >
-          {slides.map((slide, i) => (
+          {sortedFiltered.map((slide, i) => (
             <SwiperSlide key={i} className="">
               <Card slide={slide} />
             </SwiperSlide>

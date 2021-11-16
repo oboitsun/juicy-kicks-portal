@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { slides } from "../../pages/Marketplace/db";
+import { slides } from "../../utils";
+
 import "./marketplace.scss";
+
 export default function Marketplace() {
   return (
     <div className="nav-grid-item">

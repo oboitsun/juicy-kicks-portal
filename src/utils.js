@@ -1,3 +1,56 @@
+export const characters = [
+  {
+    value: null,
+    label: "All",
+  },
+  {
+    value: "pear",
+    label: "Pear",
+  },
+  {
+    value: "cherry",
+    label: "Cherry",
+  },
+  {
+    value: "watermelon",
+    label: "Watermelon",
+  },
+  {
+    value: "fig",
+    label: "Fig",
+  },
+  {
+    value: "pineapple",
+    label: "Pineapple",
+  },
+  {
+    value: "blueberry",
+    label: "Blueberry",
+  },
+];
+export const backs = [
+  { value: null, label: "All" },
+  { value: "red", label: "Red" },
+  { value: "navy", label: "Navy" },
+  { value: "blue", label: "Blue" },
+  { value: "fig", label: "Fig" },
+  { value: "yellow", label: "Yellow" },
+  { value: "orange", label: "Orange" },
+];
+export const rarities = [
+  { value: null, label: "All" },
+  { value: "common", label: "Common" },
+  { value: "uncommon", label: "Uncommon" },
+  { value: "rare", label: "Rare" },
+  { value: "ultraRare", label: "Ultra Rare" },
+];
+export const sortBy = [
+  { value: null, label: "new first" },
+  {
+    value: "rarity",
+    label: "rarity",
+  },
+];
 export const slides = [
   {
     imgSrc: "assets/nfts/1.png",

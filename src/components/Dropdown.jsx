@@ -25,7 +25,7 @@ const colourStyles = {
     ...styles,
     outline: "none",
     borderColor: "transparent",
-    border: "none",
+    // border: "none",
     display: "flex",
     alignItems: "center",
     background: "transparent",
