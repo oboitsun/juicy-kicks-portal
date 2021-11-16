@@ -35,7 +35,18 @@ export default function Login(props) {
               key={i}
               className="w-full bg-white flex flex-col items-center p-8 rounded-lg"
             >
-              <img className="h-10" src={wallet.imgSrc} alt="wallet-icon" />
+              {wallet.name === "earth" ? (
+                <div className="flex items-center">
+                  <img
+                    className="h-10 mr-2"
+                    src="assets/earth-wallet-icon.png"
+                    alt="wallet-icon"
+                  />
+                  <img className="h-10" src={wallet.imgSrc} alt="wallet-icon" />
+                </div>
+              ) : (
+                <img className="h-10" src={wallet.imgSrc} alt="wallet-icon" />
+              )}
               <button onClick={wallet.onClick} className={`btn ${wallet.name}`}>
                 connect wallet
               </button>
