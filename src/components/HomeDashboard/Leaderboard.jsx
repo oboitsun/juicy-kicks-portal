@@ -4,19 +4,19 @@ import "./leaderboard.scss";
 export default function Leaderboard() {
   const leaderboard = [
     {
-      user: "sergey",
+      user: "Juicy Player 1",
       pts: 1000.0,
     },
     {
-      user: "emma",
+      user: "Juicy Player 2",
       pts: 500.0,
     },
     {
-      user: "sheldon",
+      user: "Juicy Player 3",
       pts: 300.0,
     },
     {
-      user: "oleksii",
+      user: "Juicy Player 4",
       pts: 100.0,
     },
   ];
