@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@800&display=swap");
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  color: #3a3a3a;
+  text-transform: uppercase;
+}
+
+.track {
+  height: 16px;
+  width: 100%;
+  background-color: #c4c4c4;
+  border-radius: 8px;
+  margin-left: 16px;
+  position: relative;
+}
+.track_highlighted {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  background-color: #ff8413;
+  border-radius: 8px;
+}
+
+.thumb {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ff8413;
+
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

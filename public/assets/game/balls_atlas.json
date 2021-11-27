@@ -1,0 +1,268 @@
+{
+    "frames": [
+        {
+            "filename": "asset_16-821",
+            "frame": {
+                "w": 66,
+                "h": 66,
+                "x": 4,
+                "y": 4
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_15-821",
+            "frame": {
+                "w": 66,
+                "h": 65,
+                "x": 74,
+                "y": 4
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_1-821",
+            "frame": {
+                "w": 65,
+                "h": 63,
+                "x": 4,
+                "y": 74
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_18-821",
+            "frame": {
+                "w": 64,
+                "h": 59,
+                "x": 74,
+                "y": 73
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_13-821",
+            "frame": {
+                "w": 62,
+                "h": 63,
+                "x": 4,
+                "y": 141
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_14-821",
+            "frame": {
+                "w": 62,
+                "h": 63,
+                "x": 70,
+                "y": 141
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_8-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 144,
+                "y": 4
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_9-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 144,
+                "y": 70
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_10-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 136,
+                "y": 136
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_11-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 4,
+                "y": 208
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_12-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 70,
+                "y": 208
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_6-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 136,
+                "y": 202
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_7-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 210,
+                "y": 4
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_2-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 210,
+                "y": 70
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_3-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 202,
+                "y": 136
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_4-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 202,
+                "y": 202
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_5-821",
+            "frame": {
+                "w": 62,
+                "h": 62,
+                "x": 4,
+                "y": 274
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_17-821",
+            "frame": {
+                "w": 59,
+                "h": 59,
+                "x": 70,
+                "y": 274
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_19-821",
+            "frame": {
+                "w": 59,
+                "h": 59,
+                "x": 133,
+                "y": 274
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "asset_20-821",
+            "frame": {
+                "w": 59,
+                "h": 58,
+                "x": 196,
+                "y": 268
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}

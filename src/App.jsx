@@ -34,16 +34,16 @@ function App() {
             </RequireAuth>
           }
         >
-          <AnimatePresence exitBeforeEnter>
-            <Route path="/" element={<HomeDashboard />} />
-            <Route path="/my-kicks" element={<MyKicks />} />
+          {/* <AnimatePresence exitBeforeEnter> */}
+          <Route path="/" element={<HomeDashboard />} />
+          <Route path="/my-kicks" element={<MyKicks />} />
 
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/store" element={<Store />} />
-            <Route path="/marketplace" element={<Marketplace />} />
-            <Route path="/minigames" element={<Minigames />} />
-            <Route path="/help" element={<HelpCenter />} />
-          </AnimatePresence>
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/minigames" element={<Minigames />} />
+          <Route path="/help" element={<HelpCenter />} />
+          {/* </AnimatePresence> */}
         </Route>
       </Routes>{" "}
     </div>
