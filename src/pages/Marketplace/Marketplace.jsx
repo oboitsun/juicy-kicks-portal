@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "../../components/Dropdown";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "./marketplace.scss";
@@ -30,7 +30,9 @@ export default function Marketplace() {
     .filter((card) => card.character === char || (char === null && card))
     .filter((card) => card.background === back || (back === null && card))
     .filter((card) => card.rarity === rarity || (rarity === null && card));
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div id="marketplace" className="w-full ">
       <SectionHeaderBackNav pageName="Marketplace" />
