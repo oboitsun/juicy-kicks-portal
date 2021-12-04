@@ -11,10 +11,11 @@ import "swiper/css/pagination";
 import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 
-import { slides, characters, backs, rarities, sortBy } from "../../utils";
+import { slides, characters, backs, rarities, sortBy, slidesPerView } from "../../utils";
 
 SwiperCore.use([Grid, Pagination, Navigation]);
 export default function Marketplace() {
+  const [currentSlidesPerView, setSlidesPerView] = useState({ inRow: 5, rows: 5 });
   const [char, setChar] = useState(null);
   const [back, setBack] = useState(null);
   const [sort, setSort] = useState(null);
@@ -64,6 +65,21 @@ export default function Marketplace() {
           icon="sort"
           heading={"Sort by"}
         />
+
+        <Dropdown
+          setStateFunc={setSlidesPerView}
+          options={slidesPerView}
+          value={
+            slidesPerView[
+              slidesPerView.findIndex(
+                (el) =>
+                  el.label === currentSlidesPerView.rows * currentSlidesPerView.inRow
+              )
+            ]
+          }
+          icon="sort"
+          heading={"Show"}
+        />
       </div>
 
       <div className="relative">
@@ -75,12 +91,13 @@ export default function Marketplace() {
         </div>
         <Swiper
           className=""
-          slidesPerView={4}
+          slidesPerGroup={currentSlidesPerView.inRow}
+          slidesPerView={currentSlidesPerView.inRow}
           grid={{
-            rows: 2,
+            rows: currentSlidesPerView.rows,
             fill: "row",
           }}
-          spaceBetween={32}
+          spaceBetween={20}
           pagination={pagination}
           // loop={true}
           navigation={{
@@ -92,11 +109,11 @@ export default function Marketplace() {
             <SwiperSlide key={i} className="">
               <div className="slide-inner-wrapper rounded-md overflow-hidden">
                 <img className="w-full" src={slide.imgSrc} alt="slide" />
-                <div className="nft-specs">
-                  <p className="text-white font-extrabold text-xs uppercase">
+                <div className="nft-specs text-xs flex justify-center w-full">
+                  {/* <p className="text-white  font-extrabold text-xs uppercase">
                     {slide.character}
-                  </p>
-                  <p className="text-white "> 1 ICP</p>
+                  </p> */}
+                  <p className="text-white  text-center"> 1 ICP</p>
                   {/* <button className=" px-4 rounded-md border-white border-2 text-xs uppercase">
                     buy now
                   </button> */}
