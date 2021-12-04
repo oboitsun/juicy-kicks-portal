@@ -35,7 +35,7 @@ export default function Marketplace() {
     <div id="marketplace" className="w-full ">
       <SectionHeaderBackNav pageName="Marketplace" />
 
-      <div className="w-full flex justify-between items-center gap-8 py-8  relative">
+      <div className="w-full flex justify-between items-center gap-5 pt-8 px-4  relative">
         <Dropdown
           setStateFunc={setChar}
           options={characters}
@@ -109,11 +109,12 @@ export default function Marketplace() {
             <SwiperSlide key={i} className="">
               <div className="slide-inner-wrapper rounded-md overflow-hidden">
                 <img className="w-full" src={slide.imgSrc} alt="slide" />
-                <div className="nft-specs text-xs flex justify-center w-full">
-                  {/* <p className="text-white  font-extrabold text-xs uppercase">
-                    {slide.character}
-                  </p> */}
-                  <p className="text-white  text-center"> 1 ICP</p>
+                <div className="nft-specs  flex justify-center gap-2 w-full font-extrabold">
+                  <p className="text-white   text-xs uppercase">
+                    {/* {slide.character} */}
+                    Buy now
+                  </p>
+                  <p className="text-white  text-center font bold"> 1 ICP</p>
                   {/* <button className=" px-4 rounded-md border-white border-2 text-xs uppercase">
                     buy now
                   </button> */}
