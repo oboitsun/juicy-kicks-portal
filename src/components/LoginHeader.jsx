@@ -6,7 +6,7 @@ import Socials from "./Socials";
 export default function LoginHeader() {
   const dispatch = useDispatch();
   const links = [
-    { text: "Home", href: "https://juicy-kicks.vercel.app" },
+    { text: "Home", href: "https://www.juicykicks.io" },
     {
       text: "contact us",
       onClick: () => {

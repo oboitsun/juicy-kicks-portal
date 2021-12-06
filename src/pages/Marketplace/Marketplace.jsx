@@ -109,14 +109,29 @@ export default function Marketplace() {
         >
           {sortedFiltered.map((slide, i) => (
             <SwiperSlide key={i} className="">
-              <div className="slide-inner-wrapper rounded-md overflow-hidden">
+              <div className="slide-inner-wrapper rounded-md overflow-hidden group cursor-pointer">
                 <img className="w-full" src={slide.imgSrc} alt="slide" />
-                <div className="nft-specs  flex justify-center gap-2 w-full font-extrabold">
-                  <p className="text-white   text-xs uppercase">
+                <div
+                  className={`nft-specs  flex justify-center gap-2 w-full font-extrabold items-center relative ${
+                    currentSlidesPerView.inRow < 10 ? "h-8" : " h-5"
+                  }`}
+                >
+                  <p
+                    className={`group-hover:block hidden abs-centering  transition-all text-white ${
+                      currentSlidesPerView.inRow < 10 ? "text-xs" : " text-[50%]"
+                    } uppercase leading-none`}
+                  >
                     {/* {slide.character} */}
                     Buy now
                   </p>
-                  <p className="text-white  text-center font bold"> 1 ICP</p>
+                  <p
+                    className={`block group-hover:hidden transition-all abs-centering text-white  text-center ${
+                      currentSlidesPerView.inRow < 10 ? "text-xs" : " text-[60%]"
+                    } font bold`}
+                  >
+                    {" "}
+                    1 ICP
+                  </p>
                   {/* <button className=" px-4 rounded-md border-white border-2 text-xs uppercase">
                     buy now
                   </button> */}

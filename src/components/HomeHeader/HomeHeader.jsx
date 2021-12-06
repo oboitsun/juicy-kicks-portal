@@ -9,7 +9,7 @@ export default function HomeHeader() {
     dispatch(setUser(null));
   };
   const links = [
-    { text: "home", href: "https://juicy-kicks.vercel.app" },
+    { text: "home", href: "https://www.juicykicks.io" },
     {
       text: "contact us",
       onClick: () => {
