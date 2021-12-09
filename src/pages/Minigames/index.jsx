@@ -6,7 +6,7 @@ import { Link, Route, Outlet } from "react-router-dom";
 export default function Minigames() {
   return (
     <div className="w-full mini-games">
-      <SectionHeaderBackNav pageName="Mini games" />
+      <SectionHeaderBackNav pageName="Games" />
 
       <div className="flex flex-col w-full gap-10 pt-10">
         <Link to="/pong">

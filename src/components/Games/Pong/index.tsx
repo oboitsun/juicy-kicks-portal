@@ -4,8 +4,29 @@ import style from "./style.module.scss";
 import { score } from "./Game/Scenes/Game/Manager";
 import { Overlay, AttentionOverlay, MenuOverlay, SettingsOverlay } from "./UI/Overlay";
 import Header from "./UI/Header";
-import Utils from "../../../utils/";
+// import Utils from "../../../utils/";
+namespace Utils {
+  export function mergeClassnames(...classnames: (string | undefined)[]): string {
+    return classnames.filter((classname) => classname).join(" ");
+  }
 
+  export const clamp = (value: number, min: number, max: number): number =>
+    Math.max(min, Math.min(max, value));
+
+  export const map = (
+    value: number,
+    min: number,
+    max: number,
+    dMin: number,
+    dMax: number,
+    clampValue: boolean = false
+  ): number =>
+    (((clampValue ? clamp(value, min, max) : value) - min) / (max - min)) *
+      (dMax - dMin) +
+    dMin;
+}
+
+// export default Utils;
 export default function Pong() {
   const [score, setScore] = useState<score>([0, 0]);
   const [overlay, setOverlay] = useState<Overlay>(Overlay.None);

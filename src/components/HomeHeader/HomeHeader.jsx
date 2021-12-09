@@ -26,11 +26,10 @@ export default function HomeHeader() {
           </a>
         ))}
       </div>
-      <img
-        className="w-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute"
-        src="assets/logo.png"
-        alt="Logo"
-      />
+      <div className="w-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute flex  items-center gap-2">
+        <img className="pb-3 w-32" src="assets/logo.png" alt="Logo" />
+        <p className="text-white text-xl font-bold leading-none pt-1">PORTAL</p>
+      </div>
       <div className="text-white flex gap-6 items-center font-extrabold  uppercase">
         <p className="text-xl ">2.70195258 ICP</p>
         <button onClick={logOut} className="btn-disconnect font-extrabold uppercase">

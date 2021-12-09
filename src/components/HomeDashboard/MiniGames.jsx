@@ -14,7 +14,7 @@ export default function MiniGames() {
         </div>
         <Link to="/minigames">
           {" "}
-          <button className="nav-grid-item-button minigames">MINIGAMES</button>
+          <button className="nav-grid-item-button minigames">GAMES</button>
         </Link>
       </div>
     </div>
