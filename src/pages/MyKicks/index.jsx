@@ -9,7 +9,7 @@ import "./my-kicks.scss";
 import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 import Card from "./Card";
-import { slides, characters, backs, rarities, sortBy } from "../../utils";
+import { slides, characters, backs, rarities, sortBy } from "../../data";
 import { useState } from "react";
 
 SwiperCore.use([Grid, Pagination, Navigation]);

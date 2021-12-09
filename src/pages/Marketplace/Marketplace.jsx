@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import SwiperCore, { Grid, Navigation, Pagination } from "swiper";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 
-import { slides, characters, backs, rarities, sortBy, slidesPerView } from "../../utils";
+import { slides, characters, backs, rarities, sortBy, slidesPerView } from "../../data";
 
 SwiperCore.use([Grid, Pagination, Navigation]);
 export default function Marketplace() {

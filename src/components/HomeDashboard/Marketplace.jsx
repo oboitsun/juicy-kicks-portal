@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { slides } from "../../utils";
+import { slides } from "../../data";
 
 import "./marketplace.scss";
 

@@ -30,7 +30,7 @@ export default function LoginHeader() {
         )}
       </div>
       <div className="w-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 absolute flex  items-center gap-2">
-        <img className="pb-3" src="assets/logo.png" alt="Logo" />
+        <img className="pb-3 w-32" src="assets/logo.png" alt="Logo" />
         <p className="text-white text-xl font-bold leading-none pt-1">PORTAL</p>
       </div>
       <Socials />
