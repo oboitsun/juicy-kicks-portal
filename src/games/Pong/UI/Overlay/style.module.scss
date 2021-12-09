@@ -1,0 +1,41 @@
+.menu_container_button {
+  justify-content: center;
+  font-size: 16px !important;
+  margin: 5px 0;
+  box-shadow: 0 0 14px 0px #00000026;
+}
+
+.menu_slider {
+  margin: 8px 0;
+}
+
+.attention_overlay {
+  align-items: center;
+}
+.attention_overlay_icon {
+  color: #ff8413;
+  font-size: 64px;
+  margin: 16px 0;
+}
+.attention_overlay_title {
+  color: #ff8413;
+
+  font-family: "Exo", sans-serif;
+  font-size: 24px;
+}
+
+.attention_overlay_subtitle {
+  color: #3a3a3a;
+
+  font-family: "Exo", sans-serif;
+  font-size: 16px;
+  width: 60%;
+  margin-bottom: 8px;
+}
+
+.attention_overlay_button {
+  width: 100%;
+  justify-content: center;
+  font-size: 16px !important;
+  margin: 5px 0;
+}

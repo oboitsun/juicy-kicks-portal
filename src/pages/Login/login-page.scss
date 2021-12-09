@@ -8,19 +8,34 @@
     border: 2px solid black;
     border-radius: 8px;
     @apply py-4  uppercase font-extrabold uppercase bg-black text-white w-full mt-6;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.02) translateY(-5px);
+      background-color: #90d5ae;
+      border-color: #90d5ae;
+    }
   }
   .stoic {
     border-color: #90d5ae;
     background: #90d5ae;
+    &:hover {
+      border-color: #000;
+      background-color: black;
+    }
   }
   .earth {
     box-sizing: border-box;
     color: black;
     background: transparent;
     border: 2px solid black;
+    &:hover {
+      color: white;
+      border-color: #90d5ae;
+      background-color: #90d5ae;
+    }
   }
   .gang {
-    width: 45%;
+    width: 80%;
     top: 55%;
     @apply left-1/2 absolute -translate-x-1/2 -translate-y-1/2 z-[1];
   }

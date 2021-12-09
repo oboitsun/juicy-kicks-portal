@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@800&display=swap");
+
+.button {
+  display: flex;
+  align-items: center;
+
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.2);
+  border: none;
+  font-family: "Exo", sans-serif;
+  font-size: 12px;
+  .button_text {
+    color: white;
+    text-transform: uppercase;
+  }
+  .button_icon {
+    color: white;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

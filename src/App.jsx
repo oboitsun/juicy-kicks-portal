@@ -10,10 +10,11 @@ import Login from "./pages/Login/Login";
 import Marketplace from "./pages/Marketplace/Marketplace";
 import Minigames from "./pages/Minigames";
 import MyKicks from "./pages/MyKicks";
-
+import Pong from "./components/Games/Pong";
 import Store from "./pages/Store";
 import HelpCenter from "./pages/HelpCenter/HelpCenter";
 import FlyingCard from "./components/FlyingCard";
+import PongGame from "./pages/PongGame";
 
 function App() {
   const location = useLocation();
@@ -43,6 +44,7 @@ function App() {
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/minigames" element={<Minigames />} />
           <Route path="/help" element={<HelpCenter />} />
+          <Route path="/pong" element={<PongGame />} />
           {/* </AnimatePresence> */}
         </Route>
       </Routes>{" "}

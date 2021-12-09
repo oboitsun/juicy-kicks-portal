@@ -54,7 +54,7 @@ export default function Login(props) {
           ))}
         </div>
       </div>
-      <img className="gang" src="assets/gang.png" alt="gang" />
+      <img className="gang" src="assets/squad-bottom.png" alt="gang" />
       <img
         className="w-1/2 top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 z-[0]"
         src="assets/burst.png"

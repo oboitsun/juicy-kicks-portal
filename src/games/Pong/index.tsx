@@ -2,9 +2,14 @@ import PongGame from "./Game";
 import { useEffect, useRef, useState } from "react";
 import style from "./style.module.scss";
 import { score } from "./Game/Scenes/Game/Manager";
-import { Overlay, AttentionOverlay, MenuOverlay, SettingsOverlay } from "./UI/Overlay";
+import {
+  Overlay,
+  AttentionOverlay,
+  MenuOverlay,
+  SettingsOverlay,
+} from "./UI/Overlay";
 import Header from "./UI/Header";
-import Utils from "../../../utils/index";
+import Utils from "../../utils";
 
 export default function Pong() {
   const [score, setScore] = useState<score>([0, 0]);
@@ -74,10 +79,16 @@ export default function Pong() {
           })()}
         </div>
         <div
-          className={Utils.mergeClassnames(style.side_goal, style.side_goal_left)}
+          className={Utils.mergeClassnames(
+            style.side_goal,
+            style.side_goal_left
+          )}
         ></div>
         <div
-          className={Utils.mergeClassnames(style.side_goal, style.side_goal_right)}
+          className={Utils.mergeClassnames(
+            style.side_goal,
+            style.side_goal_right
+          )}
         ></div>
       </div>
     </div>
