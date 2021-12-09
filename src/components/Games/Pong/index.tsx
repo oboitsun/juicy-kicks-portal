@@ -4,7 +4,7 @@ import style from "./style.module.scss";
 import { score } from "./Game/Scenes/Game/Manager";
 import { Overlay, AttentionOverlay, MenuOverlay, SettingsOverlay } from "./UI/Overlay";
 import Header from "./UI/Header";
-import Utils from "../../../utils/index";
+import Utils from "../../../utils/";
 
 export default function Pong() {
   const [score, setScore] = useState<score>([0, 0]);
