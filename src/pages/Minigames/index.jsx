@@ -1,7 +1,7 @@
 import React from "react";
 import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 import "./minigames.scss";
-import Pong from "../../components/Games/Pong";
+// import Pong from "../../components/Games/Pong";
 import { Link, Route, Outlet } from "react-router-dom";
 export default function Minigames() {
   return (
