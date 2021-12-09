@@ -1,6 +1,6 @@
 import { faBars, faCog } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "../../../../IconButton";
-import Utils from "../../../../../utils/index";
+import Utils from "../../../utils/index";
 import { score } from "../../Game/Scenes/Game/Manager";
 import { Overlay } from "../Overlay";
 
