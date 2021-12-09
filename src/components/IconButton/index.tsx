@@ -1,6 +1,6 @@
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Utils from "../../utils/index";
+import Utils from "../utils/index";
 import stylesheet from "./style.module.scss";
 
 export interface Props {

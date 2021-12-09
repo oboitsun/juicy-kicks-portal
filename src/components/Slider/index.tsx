@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-import Utils from "../../utils/index";
+import Utils from "../utils/index";
 import stylesheet from "./style.module.scss";
 
 export interface Props {
@@ -79,9 +79,7 @@ export default function Slider({
         <div
           className={stylesheet.track_highlighted}
           style={{
-            width: `clamp(16px,${
-              Utils.map(value, min, max, 0, 100) + "%"
-            },100%)`,
+            width: `clamp(16px,${Utils.map(value, min, max, 0, 100) + "%"},100%)`,
             background: accentColor,
           }}
         ></div>

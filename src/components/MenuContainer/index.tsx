@@ -3,7 +3,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 import stylesheet from "./style.module.scss";
-import Utils from "../../utils/index";
+import Utils from "../utils/index";
 
 export interface Props {
   className?: string;
