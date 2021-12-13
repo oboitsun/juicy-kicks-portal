@@ -1,12 +1,18 @@
 .mini-games {
-  .juicy-pong {
+  .game-name {
     font-weight: 800;
-    color: #ff8515;
+
     font-size: 40px;
     text-transform: uppercase;
   }
+  .juicy-pong {
+    color: #ff8515;
+  }
   .link-content {
+    transition: all 0.3s;
+    border-radius: 10px;
     &:hover {
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
       .char {
         &:first-child {
           left: 0%;
@@ -33,23 +39,87 @@
       right: 10%;
     }
   }
+  .battle-banner-chars {
+    .battle-char {
+      transition: all 0.3s;
+    }
+    .battle-char-base {
+      z-index: 3;
+    }
+    .battle-char-1 {
+      left: -200%;
+      z-index: 6;
+    }
+    .battle-char-2 {
+      left: -130%;
+      z-index: 5;
+    }
+    .battle-char-3 {
+      left: -60%;
+      z-index: 4;
+    }
+    .battle-char-4 {
+      left: 60%;
+      z-index: 2;
+    }
+    .battle-char-5 {
+      left: 130%;
+      z-index: 1;
+    }
+  }
+  .link-content {
+    &:hover {
+      .battle-banner-chars {
+        .battle-char-base {
+          transform: translateY(-10px);
+        }
+        .battle-char-1 {
+          transform: translateY(10px);
+        }
+        .battle-char-2 {
+          transform: translateY(-10px);
+        }
+        .battle-char-3 {
+          transform: translateY(10px);
+        }
+        .battle-char-4 {
+          transform: translateY(10px);
+        }
+        .battle-char-5 {
+          transform: translateY(-10px);
+        }
+      }
+    }
+  }
   .black-border {
     text-shadow: rgb(0, 0, 0) 5px 0px 0px, rgb(0, 0, 0) 4.90033px 0.993347px 0px,
       rgb(0, 0, 0) 4.60531px 1.94709px 0px, rgb(0, 0, 0) 4.12668px 2.82321px 0px,
       rgb(0, 0, 0) 3.48353px 3.58678px 0px, rgb(0, 0, 0) 2.70151px 4.20736px 0px,
       rgb(0, 0, 0) 1.81179px 4.6602px 0px, rgb(0, 0, 0) 0.849836px 4.92725px 0px,
-      rgb(0, 0, 0) -0.145998px 4.99787px 0px, rgb(0, 0, 0) -1.13601px 4.86924px 0px,
-      rgb(0, 0, 0) -2.08073px 4.54649px 0px, rgb(0, 0, 0) -2.94251px 4.04248px 0px,
-      rgb(0, 0, 0) -3.68697px 3.37732px 0px, rgb(0, 0, 0) -4.28444px 2.57751px 0px,
-      rgb(0, 0, 0) -4.71111px 1.67494px 0px, rgb(0, 0, 0) -4.94996px 0.7056px 0px,
-      rgb(0, 0, 0) -4.99147px -0.291871px 0px, rgb(0, 0, 0) -4.83399px -1.27771px 0px,
-      rgb(0, 0, 0) -4.48379px -2.2126px 0px, rgb(0, 0, 0) -3.95484px -3.05929px 0px,
-      rgb(0, 0, 0) -3.26822px -3.78401px 0px, rgb(0, 0, 0) -2.4513px -4.35788px 0px,
-      rgb(0, 0, 0) -1.53666px -4.75801px 0px, rgb(0, 0, 0) -0.560763px -4.96845px 0px,
-      rgb(0, 0, 0) 0.437495px -4.98082px 0px, rgb(0, 0, 0) 1.41831px -4.79462px 0px,
-      rgb(0, 0, 0) 2.34258px -4.41727px 0px, rgb(0, 0, 0) 3.17346px -3.86382px 0px,
-      rgb(0, 0, 0) 3.87783px -3.15633px 0px, rgb(0, 0, 0) 4.4276px -2.32301px 0px,
-      rgb(0, 0, 0) 4.80085px -1.39708px 0px, rgb(0, 0, 0) 4.98271px -0.415447px 0px;
+      rgb(0, 0, 0) -0.145998px 4.99787px 0px,
+      rgb(0, 0, 0) -1.13601px 4.86924px 0px,
+      rgb(0, 0, 0) -2.08073px 4.54649px 0px,
+      rgb(0, 0, 0) -2.94251px 4.04248px 0px,
+      rgb(0, 0, 0) -3.68697px 3.37732px 0px,
+      rgb(0, 0, 0) -4.28444px 2.57751px 0px,
+      rgb(0, 0, 0) -4.71111px 1.67494px 0px,
+      rgb(0, 0, 0) -4.94996px 0.7056px 0px,
+      rgb(0, 0, 0) -4.99147px -0.291871px 0px,
+      rgb(0, 0, 0) -4.83399px -1.27771px 0px,
+      rgb(0, 0, 0) -4.48379px -2.2126px 0px,
+      rgb(0, 0, 0) -3.95484px -3.05929px 0px,
+      rgb(0, 0, 0) -3.26822px -3.78401px 0px,
+      rgb(0, 0, 0) -2.4513px -4.35788px 0px,
+      rgb(0, 0, 0) -1.53666px -4.75801px 0px,
+      rgb(0, 0, 0) -0.560763px -4.96845px 0px,
+      rgb(0, 0, 0) 0.437495px -4.98082px 0px,
+      rgb(0, 0, 0) 1.41831px -4.79462px 0px,
+      rgb(0, 0, 0) 2.34258px -4.41727px 0px,
+      rgb(0, 0, 0) 3.17346px -3.86382px 0px,
+      rgb(0, 0, 0) 3.87783px -3.15633px 0px,
+      rgb(0, 0, 0) 4.4276px -2.32301px 0px,
+      rgb(0, 0, 0) 4.80085px -1.39708px 0px,
+      rgb(0, 0, 0) 4.98271px -0.415447px 0px;
   }
   .white-border {
     text-shadow: rgb(255, 255, 255) 5px 0px 0px,

@@ -36,7 +36,11 @@
   }
   .gang {
     width: 50%;
-    top: 55%;
+    top: 60%;
     @apply left-1/2 absolute -translate-x-1/2 -translate-y-1/2 z-[1];
+    transition: all 0.3s;
+    &:hover {
+      transform: translateX(-50%) translateY(-50%) scale(1.05);
+    }
   }
 }

@@ -6,7 +6,7 @@ import "./login-page.scss";
 import LoginHeader from "../../components/LoginHeader";
 import LoginFooter from "../../components/LoginFooter";
 import Modal from "../../components/Modal";
-
+import { motion } from "framer-motion";
 export default function Login(props) {
   let navigate = useNavigate();
   const dispatch = useDispatch();
@@ -24,7 +24,10 @@ export default function Login(props) {
   ];
   const [showModal, setShowModal] = useState(false);
   return (
-    <div id="login-page" className="w-full min-h-screen overflow-hidden relative">
+    <div
+      id="login-page"
+      className="w-full min-h-screen overflow-hidden relative"
+    >
       <div className="absolute top-10 w-full left-0 z-[2]">
         <LoginHeader />
       </div>
@@ -55,7 +58,27 @@ export default function Login(props) {
         </div>
       </div>
       <img className="gang" src="assets/squad-bottom.png" alt="gang" />
-      <img
+      <motion.img
+        initial={{
+          top: "50%",
+          left: "50%",
+          x: "-50%",
+          y: "-50%",
+        }}
+        animate={{
+          top: "50%",
+          left: "50%",
+          x: "-50%",
+          y: "-50%",
+          scale: [1, 1.05, 0.9, 1],
+          rotate: 360,
+        }}
+        transition={{
+          duration: 25,
+          repeat: "Infinity",
+          repeatType: "loop",
+          ease: "linear",
+        }}
         className="w-1/2 top-1/2 left-1/2 absolute -translate-x-1/2 -translate-y-1/2 z-[0]"
         src="assets/burst.png"
         alt="gang"

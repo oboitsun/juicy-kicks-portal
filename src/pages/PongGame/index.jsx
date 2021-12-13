@@ -5,7 +5,7 @@ import SectionHeaderBackNav from "../../components/SectionHeaderBackNav";
 export default function PongGame() {
   return (
     <div>
-      <SectionHeaderBackNav pageName="Ping Pong" backTo="minigames" />
+      <SectionHeaderBackNav pageName="Juicy Pong" backTo="minigames" />
       <div className="w-full flex justify-center items-center pt-10">
         <Pong />
       </div>
