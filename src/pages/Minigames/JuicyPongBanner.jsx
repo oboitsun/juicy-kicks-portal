@@ -8,8 +8,8 @@ function JuicyPongBanner() {
         src="/assets/ping-pong-bg.png"
         alt="play ping pong"
       />
-      <div className="absolute w-full h-full bottom-0 left-0 px-12 grid grid-cols-3 ">
-        <div className="flex items-center justify-center">
+      <div className="absolute w-full h-full top-0 left-0 px-12 grid grid-cols-3 ">
+        <div className="flex items-center justify-center ">
           <div className="game-name juicy-pong black-border flex">
             Juicy P
             <img
@@ -20,8 +20,8 @@ function JuicyPongBanner() {
             ng
           </div>
         </div>
-        <div className="flex  self-end  relative mx-auto">
-          <img className="char " src="/assets/pong-char1.png" alt="character" />
+        <div className="flex w-full mx-auto self-end justify-center h-full relative overflow-hidden ">
+          <img className="char" src="/assets/pong-char1.png" alt="character" />
           <img className="char" src="/assets/pong-char2.png" alt="character" />
           <img className="char" src="/assets/pong-char3.png" alt="character" />
         </div>

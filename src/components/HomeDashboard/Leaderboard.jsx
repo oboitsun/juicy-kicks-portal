@@ -28,8 +28,10 @@ export default function Leaderboard() {
             {leaderboard.map((user, i) => (
               <div key={i} className={`w-full   place-grid place-${i + 1} `}>
                 <div className="relative mr-1.5">
-                  <img src="assets/star.svg" alt="star" />
-                  <span className="abs-centering text-sm pt-1 pr-px">{i + 1}</span>
+                  <img className="w-4 h-4" src="assets/star.svg" alt="star" />
+                  <span className="abs-centering text-xs pt-1 pr-px">
+                    {i + 1}
+                  </span>
                 </div>
                 <p className="mr-auto">{user.user}</p>
                 <p className="">{user.pts}</p>
@@ -39,7 +41,9 @@ export default function Leaderboard() {
         </div>
         <Link to="leaderboard">
           {" "}
-          <button className="nav-grid-item-button leaderboard">all leaderboard</button>
+          <button className="nav-grid-item-button leaderboard">
+            all leaderboard
+          </button>
         </Link>
       </div>
     </div>

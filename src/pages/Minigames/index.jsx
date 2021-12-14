@@ -5,6 +5,7 @@ import "./minigames.scss";
 import { Link, Route, Outlet } from "react-router-dom";
 import JuicyPongBanner from "./JuicyPongBanner";
 import BattleBanner from "./BattleBanner";
+import JuicyTrumpBanner from "./JuicyTrumpBanner";
 export default function Minigames() {
   return (
     <div className="w-full mini-games">
@@ -17,18 +18,7 @@ export default function Minigames() {
 
         <BattleBanner />
 
-        <div className="w-full relative">
-          <img
-            className="w-full "
-            src="/assets/memory-bg-soon.png"
-            alt="play memory"
-          />
-          <div className="absolute w-full h-full top-0 left-0 flex items-center justify-center">
-            <p className="black-border text-[40px] text-white uppercase font-extrabold">
-              Coming soon: Memory game
-            </p>
-          </div>
-        </div>
+        <JuicyTrumpBanner />
       </div>
     </div>
   );

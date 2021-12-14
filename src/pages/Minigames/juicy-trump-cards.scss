@@ -1,0 +1,67 @@
+.link-content {
+  &.juicy-trump-cards {
+    .jt-card {
+      position: absolute;
+      width: auto;
+      &.card-1 {
+        left: 3%;
+        top: 5%;
+      }
+      &.card-2 {
+        left: 13%;
+        top: 2%;
+      }
+      &.card-3 {
+        bottom: 2%;
+        left: 0%;
+        transform: translateX(-30%);
+      }
+      &.card-4 {
+        right: 18%;
+        top: 4%;
+      }
+      &.card-5 {
+        right: 4%;
+        top: 6%;
+      }
+      &.card-6 {
+        bottom: 0;
+        right: 15%;
+        transform: translateY(15%);
+      }
+      &.card-7 {
+        z-index: 1;
+        top: 4%;
+        left: 0;
+        transform: translateX(-20%);
+        transform-origin: left bottom;
+        transition: all 0.3s;
+      }
+      &.card-8 {
+        z-index: 1;
+        top: 4%;
+        right: 0;
+        transform-origin: right bottom;
+        transform: translateX(20%);
+        transition: all 0.3s;
+      }
+    }
+  }
+  &:hover {
+    .jt-card {
+      &.card-7 {
+        z-index: 1;
+        top: 4%;
+        left: 0;
+        transform: translateX(-20%) rotate(4deg);
+      }
+      &.card-8 {
+        z-index: 1;
+        top: 4%;
+        right: 0;
+
+        transform: translateX(20%) rotate(-6deg);
+      }
+    }
+  }
+}

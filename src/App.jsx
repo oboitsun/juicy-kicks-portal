@@ -22,7 +22,11 @@ function App() {
   return (
     <div className="relative overflow-hidden">
       <div className="absolute top-1/2 w-full h-auto ">
-        <img className=" w-full h-auto" src="assets/platform.png" alt="platform" />
+        <img
+          className=" w-full h-auto"
+          src="assets/platform.png"
+          alt="platform"
+        />
       </div>
       <FlyingCard />
       <Routes location={location} key={location.pathname}>
@@ -38,11 +42,11 @@ function App() {
           {/* <AnimatePresence exitBeforeEnter> */}
           <Route path="/" element={<HomeDashboard />} />
           <Route path="/my-kicks" element={<MyKicks />} />
-
+          <Route path="/minigames" element={<Minigames />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/store" element={<Store />} />
           <Route path="/marketplace" element={<Marketplace />} />
-          <Route path="/minigames" element={<Minigames />} />
+
           <Route path="/help" element={<HelpCenter />} />
           <Route path="/pong" element={<PongGame />} />
           {/* </AnimatePresence> */}
