@@ -1,10 +1,11 @@
 import React from "react";
 import "./home-header.scss";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setUser, setShowModal } from "../../reducers/uiReducer";
 import { Link } from "react-router-dom";
 export default function HomeHeader() {
   const dispatch = useDispatch();
+  const { walletId, balance } = useSelector((state) => state.uiState.user);
   const logOut = () => {
     dispatch(setUser(null));
   };
@@ -17,11 +18,16 @@ export default function HomeHeader() {
       },
     },
   ];
+  console.log(walletId, balance);
   return (
     <div className="home-header">
       <div className="flex gap-10">
         {links.map((link, i) => (
-          <a key={link.text} className="text-white uppercase text-xl " {...link}>
+          <a
+            key={link.text}
+            className="text-white uppercase text-xl "
+            {...link}
+          >
             {link.text}
           </a>
         ))}
@@ -31,10 +37,18 @@ export default function HomeHeader() {
         <p className="text-white text-xl font-bold leading-none pt-1">PORTAL</p>
       </div>
       <div className="text-white flex gap-6 items-center font-extrabold  uppercase">
-        <p className="text-xl ">2.70195258 ICP</p>
-        <button onClick={logOut} className="btn-disconnect font-extrabold uppercase">
-          Disconnect
-        </button>
+        <p className="text-xl ">{balance ? balance : "sorry"} ICP</p>
+        <div className="flex flex-col items-start w-full max-w-[128px] overflow-hidden overflow-ellipsis">
+          <p className="text-xs font-normal overflow-hidden overflow-ellipsis  whitespace-nowrap ">
+            {walletId}
+          </p>
+          <button
+            onClick={logOut}
+            className="btn-disconnect font-extrabold uppercase"
+          >
+            Disconnect
+          </button>
+        </div>
       </div>
     </div>
   );
