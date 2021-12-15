@@ -42,7 +42,7 @@ function App() {
           {/* <AnimatePresence exitBeforeEnter> */}
           <Route path="/" element={<HomeDashboard />} />
           <Route path="/my-kicks" element={<MyKicks />} />
-          <Route path="/minigames" element={<Minigames />} />
+          <Route path="/games" element={<Minigames />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/store" element={<Store />} />
           <Route path="/marketplace" element={<Marketplace />} />

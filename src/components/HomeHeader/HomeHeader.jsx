@@ -37,9 +37,11 @@ export default function HomeHeader() {
         <p className="text-white text-xl font-bold leading-none pt-1">PORTAL</p>
       </div>
       <div className="text-white flex gap-6 items-center font-extrabold  uppercase">
-        <p className="text-xl ">{balance ? balance : "sorry"} ICP</p>
-        <div className="flex flex-col items-start w-full max-w-[128px] overflow-hidden overflow-ellipsis">
-          <p className="text-xs font-normal overflow-hidden overflow-ellipsis  whitespace-nowrap ">
+        <p className="text-xl min-w-max ">
+          {balance !== null ? balance : "sorry"} ICP
+        </p>
+        <div className="flex flex-col items-start w-full max-w-[128px]  relative">
+          <p className="absolute w-full  left-0 -top-4 text-xs font-normal overflow-hidden overflow-ellipsis  whitespace-nowrap ">
             {walletId}
           </p>
           <button

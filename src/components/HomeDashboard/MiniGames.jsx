@@ -12,7 +12,7 @@ export default function MiniGames() {
             <img className="joy2" src="assets/joystick2.svg" alt="joystick" />
           </div>
         </div>
-        <Link to="/minigames">
+        <Link to="/games">
           {" "}
           <button className="nav-grid-item-button minigames">GAMES</button>
         </Link>

@@ -31,7 +31,7 @@ export default function Login(props) {
         if (isConnected) {
           const principalId = await window.ic.plug.agent.getPrincipal();
           const balance = await window.ic.plug.requestBalance();
-
+          console.log(balance);
           dispatch(
             setUser({
               walletId: principalId.toText(),
