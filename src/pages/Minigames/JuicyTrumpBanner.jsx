@@ -40,8 +40,8 @@ export default function JuicyTrumpBanner() {
         src="assets/minigames/juicy-trump-banner.png"
         alt="juicy trump banner"
       />
-      <div className="absolute w-full h-full top-0 left-0 px-12 grid grid-cols-[max-content,1fr,33%] ">
-        <div className="flex items-center  relative z-10">
+      <div className="absolute w-full h-full top-0 left-0 px-12 place-content-center grid grid-cols-[max-content,1fr,33%] ">
+        <div className="flex items-center h-full  relative z-10">
           <div className="game-name juicy-trump text-white green-border flex">
             Juicy <br />
             Trump

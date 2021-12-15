@@ -11,6 +11,7 @@
     line-height: 1;
   }
   .link-content {
+    cursor: pointer;
     transition: all 0.3s;
     border-radius: 10px;
     &:hover {
@@ -28,6 +29,10 @@
 
   .char {
     transition: all 0.3s;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    z-index: 1;
     &:first-child {
       position: relative;
       left: 10%;

@@ -15,46 +15,53 @@ const slides = [
   { imgSrc: "/assets/minigames/menu-chars/3.png" },
 ];
 const M = "Menu";
-const menu_items = [
-  {
-    text: "start new game",
-    icon: "assets/minigames/icons/4.svg",
-    class: "new-game",
-  },
-  {
-    text: "settings",
-    icon: "assets/minigames/icons/5.svg",
-    class: "settings",
-  },
-  {
-    text: "report",
-    icon: "assets/minigames/icons/1.svg",
-    class: "report",
-  },
-  {
-    text: "help center",
-    icon: "assets/minigames/icons/2.svg",
-    class: "help-center",
-  },
-  {
-    text: "leader board",
-    icon: "assets/minigames/icons/3.svg",
-    class: "leaderboard",
-  },
-  {
-    text: "exit game",
-    icon: "assets/minigames/icons/3.svg",
-    class: "exit-game",
-  },
-];
-export default function Menu() {
+
+export default function Menu({ setShowMenu }) {
+  const menu_items = [
+    {
+      text: "start new game",
+      icon: "assets/minigames/icons/4.svg",
+      class: "new-game",
+      onClick: () => {
+        setShowMenu(false);
+      },
+    },
+    {
+      text: "settings",
+      icon: "assets/minigames/icons/5.svg",
+      class: "settings",
+    },
+    {
+      text: "report",
+      icon: "assets/minigames/icons/1.svg",
+      class: "report",
+    },
+    {
+      text: "help center",
+      icon: "assets/minigames/icons/2.svg",
+      class: "help-center",
+    },
+    {
+      text: "leader board",
+      icon: "assets/minigames/icons/3.svg",
+      class: "leaderboard",
+    },
+    {
+      text: "exit game",
+      icon: "assets/minigames/icons/3.svg",
+      class: "exit-game",
+    },
+  ];
   return (
     <div className="Menu gap-5">
       <div className={`${M}__menu flex flex-col `}>
         <p className="text-2xl font-extrabold uppercase pb-6">Juicy Pong</p>
         <div className="flex flex-col flex-grow justify-between h-full">
           {menu_items.map((item, i) => (
-            <button className={`${M}__menu-button ${item.class}`}>
+            <button
+              onClick={item?.onClick}
+              className={`${M}__menu-button ${item.class}`}
+            >
               <img src={item.icon} alt={item.text} />
               <span>{item.text}</span>
             </button>
