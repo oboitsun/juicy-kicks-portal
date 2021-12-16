@@ -108,11 +108,11 @@ export default function Menu({ setShowMenu }) {
             </div>
             <Swiper
               className=""
-              autoplay={{
-                delay: 3500,
+              // autoplay={{
+              //   delay: 3500,
 
-                disableOnInteraction: false,
-              }}
+              //   disableOnInteraction: false,
+              // }}
               modules={[Navigation, Autoplay]}
               spaceBetween={10}
               slidesPerView={1}

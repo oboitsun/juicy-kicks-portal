@@ -1,0 +1,17 @@
+.PongGame {
+  .game-char {
+    position: absolute;
+    top: 50%;
+    height: 90%;
+    width: auto;
+    z-index: 0;
+    &.char-1 {
+      left: 0;
+      transform: translateX(-60%) translateY(-50%);
+    }
+    &.char-2 {
+      right: 0;
+      transform: translateX(60%) translateY(-50%);
+    }
+  }
+}
